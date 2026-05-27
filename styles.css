@@ -1019,3 +1019,18 @@ nav a.active::after {
     width: 24px;
     height: 24px;
 }
+
+@media (max-width: 768px) {
+    .scroll-top-btn {
+        bottom: 25px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        z-index: 9999;
+    }
+    
+    .scroll-top-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
