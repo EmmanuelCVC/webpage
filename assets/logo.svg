@@ -1,1 +1,54 @@
-
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="270.1629"
+   height="192.9735"
+   viewBox="315 45 270.1629 192.9735"
+   version="1.1"
+   id="svg4"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <style
+     id="style1">line.bg { stroke: rgba(3, 148, 172, 0.7); stroke-width: 1; }circle.bg { fill: rgba(100, 220, 240, 0.7); }line.bg-sub { stroke: rgba(140, 240, 240, 0.5); stroke-width: 1; }g.u rect, g.u path, g.u circle { fill: none; stroke-width: 2; stroke-linejoin: round; }pattern line { vector-effect: non-scaling-stroke; }.zoomed-out pattern line { vector-effect: none; }text { stroke-width: 0; font-family: sans-serif; }text tspan { white-space: pre; }.ui-dark { background: rgb(51, 51, 51); }.ui-dark line.bg { stroke: rgba(172, 232, 242, 0.57); stroke-width: 1; }.ui-dark circle.bg { fill: rgba(100, 220, 240, 0.3); }.ui-dark line.bg-sub { stroke: rgba(140, 240, 240, 0.1); stroke-width: 1; }rect.marquee { fill: rgba(234, 255, 231, 0.3); stroke: rgb(98, 137, 95); stroke-width: 1; stroke-dasharray: 4; vector-effect: non-scaling-stroke; }rect.highlight { fill: blue; opacity: 0.5; }.bg rect { stroke: rgba(3, 148, 172, 0.7); stroke-width: 1; }</style>
+  <defs
+     class="ic"
+     id="defs1" />
+  <defs
+     id="defs2" />
+  <defs
+     id="defs3" />
+  <g
+     class="u current"
+     data-layer="Layer 1"
+     style="visibility:visible;fill:#ffffff;fill-opacity:1"
+     id="g4"
+     transform="matrix(0.64324496,0,0,0.64324496,44.837122,-32.189395)">
+    <path
+       d="M 420,120 V 420 H 602 V 360 H 480 v -60 h 60 v -60 h -60 v -60 h 122 v -60 z"
+       class=""
+       stroke="rgba(0, 0, 0, 1)"
+       id="gx6xz7b8"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.1;stroke-linejoin:round"
+       data-mut="" />
+    <path
+       d="M 660,180 V 360"
+       class=""
+       stroke="rgba(0, 0, 0, 1)"
+       id="orxv8hat"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.1;stroke-linejoin:round"
+       data-mut="" />
+    <path
+       d="m 600,120 h 180 v 120 h -60 v -60 h -60 v 180 h 60 v -60 h 60 V 420 H 600 Z"
+       class=""
+       stroke="rgba(0, 0, 0, 1)"
+       id="a7xt1nsk"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.1;stroke-linejoin:round"
+       data-mut="" />
+    <path
+       d="m 780,240 v 60 h 60 v -60 z"
+       class=""
+       stroke="rgba(0, 0, 0, 1)"
+       id="3v7yzln1"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.1;stroke-linejoin:round"
+       data-mut="" />
+  </g>
+</svg>
