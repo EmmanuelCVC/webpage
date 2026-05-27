@@ -142,4 +142,24 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (reqContainer) {
         reqContainer.innerHTML = '<p style="text-align: center; color: red;">Error al cargar la información.</p>';
     }
+
+    // 6. Scroll to Top Button
+    const scrollTopBtn = document.querySelector('.scroll-top-btn');
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
