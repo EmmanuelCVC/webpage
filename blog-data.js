@@ -7,10 +7,12 @@ const blogPosts = [
         excerpt: "Descubre por qué el mantenimiento regular es crucial para evitar costosas paradas en la industria.",
         content: `El mantenimiento preventivo no solo ahorra dinero a largo plazo, sino que garantiza la seguridad de todo el personal. 
 
+<img src="assets/mantenimiento_preventivo.png" alt="Mantenimiento Preventivo" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin: 20px 0;">
+
 En la industria moderna, la continuidad operativa es fundamental. Una parada inesperada puede costar miles de dólares por hora, además de poner en riesgo la integridad de los equipos. Un plan de mantenimiento preventivo bien estructurado permite identificar y corregir fallos potenciales antes de que ocurran.
 
 Nuestros expertos en ELECCON Ingeniería recomiendan realizar auditorías eléctricas cada 6 meses.`,
-        image: "https://images.unsplash.com/photo-1581092921461-eab6245b0262?auto=format&fit=crop&q=80&w=800"
+        image: "assets/mantenimiento_preventivo.png"
     },
     {
         id: 2,
