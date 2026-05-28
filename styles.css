@@ -562,7 +562,8 @@ footer {
 
 .mobile-menu-btn.open span:nth-child(2) {
     opacity: 0;
-    transform: scale(0);
+    transform: translateX(-20px);
+    background-color: transparent;
 }
 
 .mobile-menu-btn.open span:nth-child(3) {
