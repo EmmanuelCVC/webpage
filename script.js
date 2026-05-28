@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (event) => {
+        // Close menu when clicking or touching outside
+        const closeMenuOutside = (event) => {
             const isClickInsideMenu = navMenu.contains(event.target);
             const isClickOnBtn = mobileMenuBtn.contains(event.target);
             
@@ -26,7 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 navMenu.classList.remove('active');
                 mobileMenuBtn.classList.remove('open');
             }
-        });
+        };
+
+        document.addEventListener('click', closeMenuOutside);
+        document.addEventListener('touchstart', closeMenuOutside, { passive: true });
     }
 
     // 2. Scroll Animations using IntersectionObserver
