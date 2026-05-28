@@ -16,6 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenuBtn.classList.remove('open');
             });
         });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            const isClickInsideMenu = navMenu.contains(event.target);
+            const isClickOnBtn = mobileMenuBtn.contains(event.target);
+            
+            if (!isClickInsideMenu && !isClickOnBtn && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('open');
+            }
+        });
     }
 
     // 2. Scroll Animations using IntersectionObserver
