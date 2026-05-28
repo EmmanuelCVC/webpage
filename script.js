@@ -4,32 +4,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.querySelector('nav ul');
 
     if (mobileMenuBtn && navMenu) {
+        // Create an overlay for closing the menu on mobile
+        const menuOverlay = document.createElement('div');
+        menuOverlay.className = 'mobile-menu-overlay';
+        document.body.appendChild(menuOverlay);
+
+        const closeMenu = () => {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.classList.remove('open');
+            menuOverlay.classList.remove('active');
+        };
+
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             mobileMenuBtn.classList.toggle('open');
+            menuOverlay.classList.toggle('active');
         });
 
         // Close menu when clicking a link
         document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.classList.remove('open');
-            });
+            link.addEventListener('click', closeMenu);
         });
 
-        // Close menu when clicking or touching outside
-        const closeMenuOutside = (event) => {
-            const isClickInsideMenu = navMenu.contains(event.target);
-            const isClickOnBtn = mobileMenuBtn.contains(event.target);
-            
-            if (!isClickInsideMenu && !isClickOnBtn && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.classList.remove('open');
-            }
-        };
-
-        document.addEventListener('click', closeMenuOutside);
-        document.addEventListener('touchstart', closeMenuOutside, { passive: true });
+        // Close menu when tapping the overlay
+        menuOverlay.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Prevents triggering elements underneath
+            closeMenu();
+        }, { passive: false });
     }
 
     // 2. Scroll Animations using IntersectionObserver

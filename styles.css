@@ -615,6 +615,20 @@ footer {
         padding: 15px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
+    
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 998;
+        display: none;
+    }
+    
+    .mobile-menu-overlay.active {
+        display: block;
+    }
 }
 
 /* Active Nav Link */
