@@ -251,24 +251,16 @@ section {
     -webkit-text-fill-color: transparent;
 }
 
-.service-card .service-svg {
-    width: 60px;
-    height: 60px;
+.service-card .service-icon {
+    font-size: 60px;
     margin-bottom: 20px;
-    stroke: url(#icon-gradient);
-    fill: none;
+    color: var(--secondary-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
 }
 
-/* Define SVG Gradient globally if possible, or just use CSS for stroke if it's simpler.
-   Since CSS gradients on SVG strokes are tricky without defs, we'll use solid secondary color 
-   or apply stroke directly in HTML. Here's a solid fallback: */
-.service-card .service-svg {
-    stroke: var(--secondary-color);
-    transition: stroke 0.3s ease, transform 0.3s ease;
-}
-
-.service-card:hover .service-svg {
-    stroke: var(--accent-color);
+.service-card:hover .service-icon {
+    color: var(--accent-color);
     transform: scale(1.1);
 }
 
