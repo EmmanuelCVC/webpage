@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             listHTML += '</ul>';
             
             section.innerHTML = `
-                <h3>${tramite.titulo}</h3>
+                <h3><span class="material-symbols-outlined req-title-icon">${tramite.icon}</span> ${tramite.titulo}</h3>
                 <p>${tramite.descripcion}</p>
                 ${listHTML}
             `;

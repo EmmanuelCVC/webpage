@@ -1,6 +1,7 @@
 const requisitosData = [
   {
     "id": "planos",
+    "icon": "architecture",
     "titulo": "Elaboración de planos eléctricos",
     "descripcion": "En esta sección encontrarás los requisitos y documentación necesaria para el diseño y confección de planos sellados por el CFIA.",
     "requisitos": [
@@ -10,6 +11,7 @@ const requisitosData = [
   },
   {
     "id": "boletas",
+    "icon": "receipt_long",
     "titulo": "Boletas eléctricas",
     "descripcion": "Trámite de boletas eléctricas debidamente selladas por el CFIA. Prepará los siguientes documentos previos:",
     "requisitos": [
@@ -19,6 +21,7 @@ const requisitosData = [
   },
   {
     "id": "medidor",
+    "icon": "electric_meter",
     "titulo": "Solicitud de nuevo medidor",
     "descripcion": "Requisitos para la gestión y solicitud de nuevos medidores u otros trámites afines ante la compañía proveedora de electricidad.",
     "requisitos": [
@@ -28,6 +31,7 @@ const requisitosData = [
   },
   {
     "id": "balanceo",
+    "icon": "electric_bolt",
     "titulo": "Balanceo de carga",
     "descripcion": "Para la distribución equitativa de cargas en sistemas trifásicos y monofásicos, necesitamos conocer lo siguiente:",
     "requisitos": [
@@ -37,6 +41,7 @@ const requisitosData = [
   },
   {
     "id": "estudio",
+    "icon": "troubleshoot",
     "titulo": "Estudio eléctrico",
     "descripcion": "Para realizar un análisis y diagnóstico profundo de su sistema e infraestructura eléctrica, necesitamos:",
     "requisitos": [
@@ -46,6 +51,7 @@ const requisitosData = [
   },
   {
     "id": "instalaciones",
+    "icon": "electrical_services",
     "titulo": "Instalaciones eléctricas",
     "descripcion": "Para el diseño y ejecución de proyectos eléctricos para diversos sectores, es fundamental contar con:",
     "requisitos": [
@@ -55,6 +61,7 @@ const requisitosData = [
   },
   {
     "id": "permisos-municipales",
+    "icon": "home_work",
     "titulo": "Permisos municipales",
     "descripcion": "Para llevar a cabo los trámites para instalaciones eléctricas según la nueva ley vigente, requerimos:",
     "requisitos": [
@@ -64,6 +71,7 @@ const requisitosData = [
   },
   {
     "id": "certificacion-salud",
+    "icon": "verified",
     "titulo": "Certificación eléctrica",
     "descripcion": "Para emitir la certificación para permisos requeridos por el Ministerio de Salud, es necesario presentar:",
     "requisitos": [
