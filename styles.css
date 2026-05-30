@@ -53,7 +53,7 @@ body {
 }
 
 .logo-img {
-    height: 50px;
+    height: 45px;
     width: auto;
 }
 
@@ -1305,13 +1305,15 @@ nav a.active::after {
     background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.15), transparent);
     margin: 0;
 }
+
 /* Header Animation Logic */
 .brand-name {
     position: relative;
     overflow: hidden;
     display: inline-block;
     vertical-align: middle;
-    -webkit-mask-image: -webkit-radial-gradient(white, black); /* Hack for Safari overflow:hidden */
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    /* Hack for Safari overflow:hidden */
 }
 
 .brand-text-wrapper {
@@ -1337,7 +1339,8 @@ nav a.active::after {
 .brand-ingenieria {
     display: inline-block;
     vertical-align: middle;
-    margin-left: 8px; /* Clean and reliable visual separation */
+    margin-left: 4px;
+    /* Clean and reliable visual separation */
     transition: margin-left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-transition: margin-left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
