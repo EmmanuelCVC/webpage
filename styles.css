@@ -193,7 +193,7 @@ nav a:hover {
 
 /* Sections General */
 section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 .container {
@@ -648,8 +648,8 @@ nav a.active::after {
 #blog-header {
     background: #f4f7f6;
     text-align: center;
-    padding-top: 150px;
-    padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 40px;
 }
 
 .section-subtitle {
@@ -807,12 +807,12 @@ nav a.active::after {
 .contact-hero {
     background: #f4f7f6;
     text-align: center;
-    padding-top: 150px;
-    padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 40px;
 }
 
 .contact-page-section {
-    padding: 50px 0;
+    padding: 40px 0;
     background: white;
 }
 
@@ -1060,7 +1060,7 @@ nav a.active::after {
 ======================================= */
 .service-detail-hero {
     background: linear-gradient(135deg, var(--bg-color), #ffffff);
-    padding: 150px 20px 80px;
+    padding: 100px 20px 40px;
     text-align: center;
     border-bottom: 1px solid #eee;
 }
@@ -1087,7 +1087,7 @@ nav a.active::after {
 }
 
 .service-section {
-    padding: 80px 20px;
+    padding: 60px 20px;
 }
 
 .service-section.bg-light {
@@ -1280,4 +1280,11 @@ nav a.active::after {
         flex-direction: column;
         gap: 15px;
     }
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.15), transparent);
+    margin: 0;
 }
