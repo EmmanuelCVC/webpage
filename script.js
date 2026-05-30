@@ -121,42 +121,153 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(nextSlide, 4000);
     }
 
-    // 5. Dynamic Requisitos Loading
-    const reqContainer = document.getElementById('dynamic-requisitos-container');
-    if (reqContainer && typeof requisitosData !== 'undefined') {
-        reqContainer.innerHTML = ''; // Limpiar mensaje de "cargando"
+    // 5. Dynamic Service Detail Loading
+    const serviceContainer = document.getElementById('dynamic-service-container');
+    if (serviceContainer && typeof serviciosData !== 'undefined') {
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceId = urlParams.get('id');
         
-        requisitosData.forEach(tramite => {
-            const section = document.createElement('div');
-            section.id = tramite.id;
-            section.className = 'tramite-section';
+        const service = serviciosData.find(s => s.id === serviceId);
+        
+        if (service) {
+            document.title = service.titulo + ' - ELECCON Ingeniería';
             
-            let listHTML = '<ul class="requisitos-list">';
-            tramite.requisitos.forEach(req => {
-                listHTML += `<li>${req}</li>`;
-            });
-            listHTML += '</ul>';
+            // Build the HTML structure
             
-            section.innerHTML = `
-                <h3><span class="material-symbols-outlined req-title-icon">${tramite.icon}</span> ${tramite.titulo}</h3>
-                <p>${tramite.descripcion}</p>
-                ${listHTML}
+            // Hero
+            let html = `
+                <section class="service-detail-hero">
+                    <div class="container">
+                        <span class="material-symbols-outlined hero-icon">${service.icon}</span>
+                        <h1 class="hero-title">${service.titulo}</h1>
+                        <p class="hero-subtitle">${service.subtitulo}</p>
+                        <br>
+                        <a href="contacto.html" class="cta-button primary-btn">Cotizar mi proyecto</a>
+                    </div>
+                </section>
             `;
             
-            reqContainer.appendChild(section);
-        });
-        
-        // Realizar scroll a la sección si se ingresó mediante un enlace con ancla (hash)
-        if (window.location.hash) {
-            const target = document.querySelector(window.location.hash);
-            if (target) {
-                setTimeout(() => {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-            }
+            // Casos de Uso
+            html += `
+                <section class="service-section">
+                    <div class="container">
+                        <h2 class="section-title">¿Cuándo necesita este servicio?</h2>
+                        <ul class="casos-uso-list">
+                            ${service.casosUso.map(caso => `<li><span class="material-symbols-outlined">check_circle</span> ${caso}</li>`).join('')}
+                        </ul>
+                    </div>
+                </section>
+            `;
+            
+            // Entregables
+            html += `
+                <section class="service-section bg-light">
+                    <div class="container">
+                        <h2 class="section-title">¿Qué incluye nuestro servicio?</h2>
+                        <div class="entregables-grid">
+                            ${service.entregables.map(ent => `
+                                <div class="entregable-card">
+                                    <h3>${ent.titulo}</h3>
+                                    <p>${ent.descripcion}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </section>
+            `;
+            
+            // Proceso
+            html += `
+                <section class="service-section">
+                    <div class="container">
+                        <h2 class="section-title">Nuestro Proceso de Trabajo</h2>
+                        <div class="proceso-timeline">
+                            ${service.proceso.map(paso => `
+                                <div class="proceso-step">
+                                    <div class="step-number">${paso.paso}</div>
+                                    <div class="step-content">
+                                        <h3>${paso.titulo}</h3>
+                                        <p>${paso.descripcion}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </section>
+            `;
+            
+            // Diferenciadores
+            html += `
+                <section class="service-section bg-light">
+                    <div class="container">
+                        <h2 class="section-title">¿Por qué elegirnos?</h2>
+                        <div class="diferenciadores-grid">
+                            ${service.diferenciadores.map(dif => `
+                                <div class="diferenciador-card">
+                                    <span class="material-symbols-outlined">star</span>
+                                    <div>
+                                        <h3>${dif.titulo}</h3>
+                                        <p>${dif.descripcion}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </section>
+            `;
+            
+            // FAQ
+            html += `
+                <section class="service-section">
+                    <div class="container">
+                        <h2 class="section-title">Preguntas Frecuentes</h2>
+                        <div class="faq-container">
+                            ${service.faq.map(f => `
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        ${f.pregunta}
+                                        <span class="material-symbols-outlined">expand_more</span>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p>${f.respuesta}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </section>
+            `;
+            
+            serviceContainer.innerHTML = html;
+            
+            // FAQ Accordion Logic
+            const faqItems = document.querySelectorAll('.faq-question');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const answer = item.nextElementSibling;
+                    const icon = item.querySelector('.material-symbols-outlined');
+                    
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+            
+        } else {
+            serviceContainer.innerHTML = `
+                <div style="text-align: center; padding: 150px 20px;">
+                    <h2>Servicio no encontrado</h2>
+                    <p>El servicio que buscas no existe o el enlace es incorrecto.</p><br>
+                    <a href="servicios.html" class="cta-button primary-btn">Ver todos los servicios</a>
+                </div>
+            `;
         }
-    } else if (reqContainer) {
-        reqContainer.innerHTML = '<p style="text-align: center; color: red;">Error al cargar la información.</p>';
+    } else if (serviceContainer) {
+        serviceContainer.innerHTML = '<p style="text-align: center; color: red;">Error al cargar la información.</p>';
     }
 
     // 6. Scroll to Top Button
