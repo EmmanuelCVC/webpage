@@ -278,8 +278,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. Scroll Events (Scroll to Top & Header Animation)
     const scrollTopBtn = document.querySelector('.scroll-top-btn');
     const mainHeader = document.getElementById('main-header');
-    const brandEleccon = document.querySelector('.brand-eleccon');
-    const brandWrapper = document.querySelector('.brand-text-wrapper');
 
     window.addEventListener('scroll', () => {
         // Scroll to Top Button
@@ -292,14 +290,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Header Animation
-        if (mainHeader && brandWrapper && brandEleccon) {
+        if (mainHeader) {
             if (window.scrollY > 300) {
                 mainHeader.classList.add('header-scrolled');
-                const shiftAmount = brandEleccon.offsetWidth;
-                brandWrapper.style.marginLeft = `-${shiftAmount}px`;
             } else {
                 mainHeader.classList.remove('header-scrolled');
-                brandWrapper.style.marginLeft = `0px`;
             }
         }
     });

@@ -328,8 +328,8 @@ section {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
 }
 
 .team-card {
@@ -661,10 +661,11 @@ nav a.active::after {
 
 /* Blog Styles */
 #blog-header {
-    background: #f4f7f6;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     text-align: center;
     padding-top: 100px;
     padding-bottom: 40px;
+    color: white;
 }
 
 .section-subtitle {
@@ -820,10 +821,11 @@ nav a.active::after {
 
 /* Contact Page Specialized Styles */
 .contact-hero {
-    background: #f4f7f6;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     text-align: center;
     padding-top: 100px;
     padding-bottom: 40px;
+    color: white;
 }
 
 .contact-page-section {
@@ -1308,14 +1310,13 @@ nav a.active::after {
     position: relative;
     overflow: hidden;
     display: inline-block;
+    vertical-align: middle;
     -webkit-mask-image: -webkit-radial-gradient(white, black); /* Hack for Safari overflow:hidden */
 }
 
 .brand-text-wrapper {
     display: inline-block;
     white-space: nowrap;
-    transition: margin-left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-transition: margin-left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     background: linear-gradient(to right, #fff, var(--accent-color));
     -webkit-background-clip: text;
     background-clip: text;
@@ -1324,14 +1325,22 @@ nav a.active::after {
 
 .brand-eleccon {
     display: inline-block;
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 5.5em;
+    opacity: 1;
+    overflow: hidden;
+    vertical-align: middle;
+    white-space: nowrap;
+    transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .brand-ingenieria {
     display: inline-block;
-    margin-left: 6px;
+    vertical-align: middle;
+    margin-left: 0px; /* Rely on the natural space inside .brand-eleccon for beautiful, standard separation */
 }
 
 #main-header.header-scrolled .brand-eleccon {
+    max-width: 0em;
     opacity: 0;
 }
