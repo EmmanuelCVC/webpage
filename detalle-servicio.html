@@ -16,57 +16,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .floating-back-btn {
-            position: fixed;
-            top: 100px;
-            /* Movido hacia abajo para no tapar el header */
-            left: 20px;
-            background: var(--accent-color);
-            color: var(--primary-color);
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            z-index: 2000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, background 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-body);
-        }
-
-        .floating-back-btn:hover {
-            background: #fff;
-            transform: translateY(-2px);
-            color: var(--secondary-color);
-        }
-
-        .floating-back-btn svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .floating-back-btn {
-                top: auto;
-                bottom: 20px;
-                left: 20px;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <a href="servicios.html" class="floating-back-btn" aria-label="Volver a la sección de servicios">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-        </svg>
-        Volver a servicios
-    </a>
 
     <header id="main-header">
         <div class="container">
