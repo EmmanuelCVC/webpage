@@ -275,17 +275,36 @@ document.addEventListener('DOMContentLoaded', () => {
         serviceContainer.innerHTML = '<p style="text-align: center; color: red;">Error al cargar la información.</p>';
     }
 
-    // 6. Scroll to Top Button
+    // 6. Scroll Events (Scroll to Top & Header Animation)
     const scrollTopBtn = document.querySelector('.scroll-top-btn');
-    if (scrollTopBtn) {
-        window.addEventListener('scroll', () => {
+    const mainHeader = document.getElementById('main-header');
+    const brandEleccon = document.querySelector('.brand-eleccon');
+    const brandWrapper = document.querySelector('.brand-text-wrapper');
+
+    window.addEventListener('scroll', () => {
+        // Scroll to Top Button
+        if (scrollTopBtn) {
             if (window.scrollY > 300) {
                 scrollTopBtn.classList.add('show');
             } else {
                 scrollTopBtn.classList.remove('show');
             }
-        });
+        }
 
+        // Header Animation
+        if (mainHeader && brandWrapper && brandEleccon) {
+            if (window.scrollY > 300) {
+                mainHeader.classList.add('header-scrolled');
+                const shiftAmount = brandEleccon.offsetWidth;
+                brandWrapper.style.transform = `translateX(-${shiftAmount}px)`;
+            } else {
+                mainHeader.classList.remove('header-scrolled');
+                brandWrapper.style.transform = `translateX(0)`;
+            }
+        }
+    });
+
+    if (scrollTopBtn) {
         scrollTopBtn.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({

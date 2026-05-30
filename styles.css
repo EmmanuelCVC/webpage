@@ -63,10 +63,7 @@ body {
     font-size: 1.5rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    background: linear-gradient(to right, #fff, var(--accent-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /* gradient moved to wrapper */
 }
 
 nav ul {
@@ -1305,4 +1302,35 @@ nav a.active::after {
     height: 1px;
     background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.15), transparent);
     margin: 0;
+}
+/* Header Animation Logic */
+.brand-name {
+    position: relative;
+    overflow: hidden;
+    display: inline-block; /* Inline block to contain wrapper cleanly */
+}
+
+.brand-text-wrapper {
+    display: inline-block;
+    white-space: nowrap;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Bring back the gradient text */
+    background: linear-gradient(to right, #fff, var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brand-eleccon {
+    display: inline-block;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-ingenieria {
+    display: inline-block;
+    margin-left: 6px;
+}
+
+#main-header.header-scrolled .brand-eleccon {
+    opacity: 0;
 }
