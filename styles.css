@@ -1285,6 +1285,8 @@ nav a.active::after {
 .section-divider {
     border: 0;
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.15), transparent);
-    margin: 0;
+    background-color: #dcdcdc;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1000px;
 }
