@@ -296,12 +296,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.scrollY > 300) {
                 mainHeader.classList.add('header-scrolled');
                 const shiftAmount = brandEleccon.offsetWidth;
-                brandWrapper.style.transform = `translateX(-${shiftAmount}px) translateZ(0)`;
-                brandWrapper.style.webkitTransform = `translateX(-${shiftAmount}px) translateZ(0)`;
+                brandWrapper.style.marginLeft = `-${shiftAmount}px`;
             } else {
                 mainHeader.classList.remove('header-scrolled');
-                brandWrapper.style.transform = `translateX(0) translateZ(0)`;
-                brandWrapper.style.webkitTransform = `translateX(0) translateZ(0)`;
+                brandWrapper.style.marginLeft = `0px`;
             }
         }
     });

@@ -1314,14 +1314,12 @@ nav a.active::after {
 .brand-text-wrapper {
     display: inline-block;
     white-space: nowrap;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: margin-left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: margin-left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     background: linear-gradient(to right, #fff, var(--accent-color));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    transform: translateZ(0); /* Hardware acceleration */
-    -webkit-transform: translateZ(0);
 }
 
 .brand-eleccon {
