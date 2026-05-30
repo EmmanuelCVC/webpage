@@ -109,7 +109,7 @@ nav a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 78, 146, 0.95), rgba(0, 198, 255, 0.95));
+    background: linear-gradient(135deg, rgba(0, 78, 146, 0.90), rgba(0, 198, 255, 0.90));
     z-index: 1;
 }
 
@@ -178,7 +178,7 @@ nav a:hover {
 }
 
 .hero-slide p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 0;
     opacity: 0.9;
 }
@@ -195,6 +195,11 @@ nav a:hover {
     box-shadow: 0 10px 20px rgba(0, 198, 255, 0.3);
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+#hero .cta-button {
+    background: #ffffff;
+    color: var(--secondary-color);
 }
 
 .cta-button:hover {
