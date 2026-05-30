@@ -149,6 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Casos de Uso
             html += `
+                <hr class="section-divider">
                 <section class="service-section">
                     <div class="container">
                         <h2 class="section-title">¿Cuándo necesita este servicio?</h2>
@@ -161,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Entregables
             html += `
+                <hr class="section-divider">
                 <section class="service-section bg-light">
                     <div class="container">
                         <h2 class="section-title">¿Qué incluye nuestro servicio?</h2>
@@ -178,6 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Proceso
             html += `
+                <hr class="section-divider">
                 <section class="service-section">
                     <div class="container">
                         <h2 class="section-title">Nuestro Proceso de Trabajo</h2>
@@ -198,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Diferenciadores
             html += `
+                <hr class="section-divider">
                 <section class="service-section bg-light">
                     <div class="container">
                         <h2 class="section-title">¿Por qué elegirnos?</h2>
@@ -218,6 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // FAQ
             html += `
+                <hr class="section-divider">
                 <section class="service-section">
                     <div class="container">
                         <h2 class="section-title">Preguntas Frecuentes</h2>
