@@ -161,7 +161,8 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    text-align: left;
     box-sizing: border-box;
     padding: 0 15px;
 }
