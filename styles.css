@@ -583,8 +583,11 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    #hero {
+        padding-top: 130px;
+    }
     .hero-slide h2 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     #main-header .container {
