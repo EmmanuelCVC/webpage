@@ -88,7 +88,7 @@ nav a:hover {
 
 /* Hero Section */
 #hero {
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(-45deg, #000428, #004e92, #001233, #002b5e);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
@@ -97,8 +97,10 @@ nav a:hover {
     justify-content: flex-start;
     position: relative;
     padding-top: 80px;
+    padding-bottom: 100px;
     padding-left: 5%;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 @keyframes gradientBG {
