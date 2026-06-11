@@ -89,8 +89,9 @@ nav a:hover {
 /* Hero Section */
 #hero {
     height: 100vh;
-    background: url('assets/plano.png') center/cover no-repeat;
-    background-color: var(--primary-color);
+    background: linear-gradient(-45deg, #000428, #004e92, #001233, #002b5e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,34 +101,38 @@ nav a:hover {
     overflow: hidden;
 }
 
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 78, 146, 0.90), rgba(0, 198, 255, 0.90));
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
     z-index: 1;
 }
 
 #hero::before {
     content: '';
     position: absolute;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 198, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
-    animation: rotate 20s linear infinite;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at center, rgba(0, 198, 255, 0.15) 0%, transparent 60%);
+    animation: pulseGlow 8s ease-in-out infinite alternate;
     z-index: 2;
 }
 
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
+@keyframes pulseGlow {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.1); opacity: 1; }
 }
 
 .hero-content {
@@ -173,12 +178,17 @@ nav a:hover {
     margin-bottom: 20px;
     line-height: 1.2;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUpFade 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .hero-slide p {
     font-size: 1.5rem;
     margin-bottom: 0;
-    opacity: 0.9;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUpFade 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
 }
 
 .cta-button {
@@ -198,6 +208,16 @@ nav a:hover {
 #hero .cta-button {
     background: #ffffff;
     color: var(--secondary-color);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUpFade 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards;
+}
+
+@keyframes slideUpFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .cta-button:hover {

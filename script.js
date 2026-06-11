@@ -103,8 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const slide = document.createElement('div');
             slide.className = 'hero-slide';
             slide.innerHTML = `
-                <h2 class="hidden-anim show-anim">${item.title}</h2>
-                <p class="hidden-anim show-anim">${item.description}</p>
+                <h2>${item.title}</h2>
+                <p>${item.description}</p>
             `;
             heroSlider.appendChild(slide);
         });
