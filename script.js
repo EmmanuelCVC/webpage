@@ -124,7 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Blueprint Background Rotator
     const blueprints = document.querySelectorAll('.electrical-blueprint');
     if (blueprints.length > 0) {
-        let currentBlueprintIndex = 0;
+        // Remover la clase activa por defecto y elegir uno al azar al cargar la página
+        blueprints.forEach(bp => bp.classList.remove('active-blueprint'));
+        let currentBlueprintIndex = Math.floor(Math.random() * blueprints.length);
+        blueprints[currentBlueprintIndex].classList.add('active-blueprint');
         
         const changeBlueprint = () => {
             let nextIndex;
@@ -137,8 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
             currentBlueprintIndex = nextIndex;
         };
 
-        // Cambiar cada 5 minutos (300,000 ms)
-        setInterval(changeBlueprint, 300000);
+        // Cambiar cada 30 segundos (30,000 ms)
+        setInterval(changeBlueprint, 30000);
     }
 
     // 5. Dynamic Service Detail Loading
