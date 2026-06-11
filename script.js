@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
         });
     }
-    // 4. Hero Slider Initialization
+    // 4. Hero Slider and Blueprint Rotator Initialization
     const heroSlider = document.getElementById('hero-slider');
     if (heroSlider && typeof heroData !== 'undefined' && heroData.length > 0) {
         // Create slides dynamically
@@ -119,6 +119,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Cambiar cada 4 segundos
         setInterval(nextSlide, 4000);
+    }
+
+    // Blueprint Background Rotator
+    const blueprints = document.querySelectorAll('.electrical-blueprint');
+    if (blueprints.length > 0) {
+        let currentBlueprintIndex = 0;
+        
+        const changeBlueprint = () => {
+            let nextIndex;
+            do {
+                nextIndex = Math.floor(Math.random() * blueprints.length);
+            } while (nextIndex === currentBlueprintIndex && blueprints.length > 1);
+            
+            blueprints[currentBlueprintIndex].classList.remove('active-blueprint');
+            blueprints[nextIndex].classList.add('active-blueprint');
+            currentBlueprintIndex = nextIndex;
+        };
+
+        // Cambiar cada 5 minutos (300,000 ms)
+        setInterval(changeBlueprint, 300000);
     }
 
     // 5. Dynamic Service Detail Loading
