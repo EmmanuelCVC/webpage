@@ -77,320 +77,369 @@
             <div class="hero-overlay"></div>
             <div class="hero-vectors">
                 <!-- Blueprint 1: Instalación Eléctrica Básica -->
-                <svg id="blueprint-1" class="electrical-blueprint active-blueprint" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <svg id="blueprint-1" class="electrical-blueprint active-blueprint" viewBox="0 0 1200 800"
+                    preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <pattern id="blueprint-grid-1" width="50" height="50" patternUnits="userSpaceOnUse">
-                            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5"/>
-                            <path d="M 25 0 L 25 50 M 0 25 L 50 25" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1"/>
+                            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255, 255, 255, 0.08)"
+                                stroke-width="1.5" />
+                            <path d="M 25 0 L 25 50 M 0 25 L 50 25" fill="none" stroke="rgba(255, 255, 255, 0.03)"
+                                stroke-width="1" />
                         </pattern>
                     </defs>
-                    <rect width="1200" height="800" fill="url(#blueprint-grid-1)"/>
+                    <rect width="1200" height="800" fill="url(#blueprint-grid-1)" />
 
                     <!-- Líneas / Conexiones -->
-                    <path class="blueprint-line" d="M 150,300 L 150,400 M 135,400 L 165,400 M 142,410 L 158,410 M 147,420 L 153,420" fill="none" stroke="currentColor" stroke-width="2" opacity="0.3"/> <!-- Ground -->
-                    <path class="blueprint-line" d="M 150,300 L 400,300 L 400,150" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.3"/> <!-- Trunk to TD-2 -->
-                    <path class="blueprint-line" d="M 400,300 L 400,500 L 700,500 L 700,250 L 1000,250 L 1000,550" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"/> <!-- Main trunk -->
-                    <path class="blueprint-line" d="M 400,500 L 400,650 L 900,650 L 900,550" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"/> <!-- Lower trunk -->
-                    <path class="blueprint-line" d="M 700,250 L 700,150 L 1050,150" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.3"/> <!-- Upper branch -->
-                    <path class="blueprint-line" d="M 400,150 L 500,150" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"/> <!-- Branch from TD-2 -->
+                    <path class="blueprint-line"
+                        d="M 150,300 L 150,400 M 135,400 L 165,400 M 142,410 L 158,410 M 147,420 L 153,420" fill="none"
+                        stroke="currentColor" stroke-width="2" opacity="0.3" /> <!-- Ground -->
+                    <path class="blueprint-line" d="M 150,300 L 400,300 L 400,150" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-dasharray="8,4" opacity="0.3" /> <!-- Trunk to TD-2 -->
+                    <path class="blueprint-line" d="M 400,300 L 400,500 L 700,500 L 700,250 L 1000,250 L 1000,550"
+                        fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3" /> <!-- Main trunk -->
+                    <path class="blueprint-line" d="M 400,500 L 400,650 L 900,650 L 900,550" fill="none"
+                        stroke="currentColor" stroke-width="1.5" opacity="0.3" /> <!-- Lower trunk -->
+                    <path class="blueprint-line" d="M 700,250 L 700,150 L 1050,150" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-dasharray="4,4" opacity="0.3" /> <!-- Upper branch -->
+                    <path class="blueprint-line" d="M 400,150 L 500,150" fill="none" stroke="currentColor"
+                        stroke-width="1.5" opacity="0.3" /> <!-- Branch from TD-2 -->
 
                     <!-- Tablero / Panel (TD-1) -->
                     <g class="blueprint-symbol" transform="translate(130, 280)">
-                        <rect x="-20" y="-30" width="80" height="120" fill="transparent"/>
-                        <rect x="0" y="0" width="40" height="60" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <rect x="0" y="0" width="20" height="60" fill="currentColor"/>
-                        <text x="20" y="-10" font-family="sans-serif" font-size="16" fill="currentColor" text-anchor="middle">TD-1</text>
+                        <rect x="-20" y="-30" width="80" height="120" fill="transparent" />
+                        <rect x="0" y="0" width="40" height="60" fill="none" stroke="currentColor" stroke-width="2" />
+                        <rect x="0" y="0" width="20" height="60" fill="currentColor" />
+                        <text x="20" y="-10" font-family="sans-serif" font-size="16" fill="currentColor"
+                            text-anchor="middle">TD-1</text>
                     </g>
-                    
+
                     <!-- Grounding point area hover -->
                     <g class="blueprint-symbol" transform="translate(150, 400)">
-                        <circle cx="0" cy="10" r="20" fill="transparent"/>
+                        <circle cx="0" cy="10" r="20" fill="transparent" />
                     </g>
 
                     <!-- Caja de Registro (Junction Box) -->
                     <g class="blueprint-symbol" transform="translate(400, 300)">
-                        <rect x="-15" y="-15" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <line x1="-15" y1="-15" x2="15" y2="15" stroke="currentColor" stroke-width="1"/>
-                        <line x1="-15" y1="15" x2="15" y2="-15" stroke="currentColor" stroke-width="1"/>
+                        <rect x="-15" y="-15" width="30" height="30" fill="none" stroke="currentColor"
+                            stroke-width="2" />
+                        <line x1="-15" y1="-15" x2="15" y2="15" stroke="currentColor" stroke-width="1" />
+                        <line x1="-15" y1="15" x2="15" y2="-15" stroke="currentColor" stroke-width="1" />
                     </g>
 
                     <!-- Sub-Tablero (TD-2) -->
                     <g class="blueprint-symbol" transform="translate(385, 130)">
-                        <rect x="-15" y="-20" width="60" height="90" fill="transparent"/>
-                        <rect x="0" y="0" width="30" height="40" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <rect x="0" y="0" width="15" height="40" fill="currentColor"/>
-                        <text x="15" y="-10" font-family="sans-serif" font-size="12" fill="currentColor" text-anchor="middle">TD-2</text>
+                        <rect x="-15" y="-20" width="60" height="90" fill="transparent" />
+                        <rect x="0" y="0" width="30" height="40" fill="none" stroke="currentColor" stroke-width="2" />
+                        <rect x="0" y="0" width="15" height="40" fill="currentColor" />
+                        <text x="15" y="-10" font-family="sans-serif" font-size="12" fill="currentColor"
+                            text-anchor="middle">TD-2</text>
                     </g>
 
                     <!-- Luminaria 1 -->
                     <g class="blueprint-symbol" transform="translate(380, 480)">
-                        <circle cx="20" cy="20" r="25" fill="transparent"/>
-                        <circle cx="20" cy="20" r="16" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <line x1="8" y1="8" x2="32" y2="32" stroke="currentColor" stroke-width="2"/>
-                        <line x1="32" y1="8" x2="8" y2="32" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="20" cy="20" r="25" fill="transparent" />
+                        <circle cx="20" cy="20" r="16" fill="none" stroke="currentColor" stroke-width="2" />
+                        <line x1="8" y1="8" x2="32" y2="32" stroke="currentColor" stroke-width="2" />
+                        <line x1="32" y1="8" x2="8" y2="32" stroke="currentColor" stroke-width="2" />
                     </g>
 
                     <!-- Interruptor Doble -->
                     <g class="blueprint-symbol" transform="translate(685, 235)">
-                        <circle cx="15" cy="15" r="20" fill="transparent"/>
-                        <circle cx="15" cy="15" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <line x1="22" y1="10" x2="35" y2="-2" stroke="currentColor" stroke-width="2"/>
-                        <line x1="24" y1="18" x2="38" y2="8" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="15" cy="15" r="20" fill="transparent" />
+                        <circle cx="15" cy="15" r="8" fill="none" stroke="currentColor" stroke-width="2" />
+                        <line x1="22" y1="10" x2="35" y2="-2" stroke="currentColor" stroke-width="2" />
+                        <line x1="24" y1="18" x2="38" y2="8" stroke="currentColor" stroke-width="2" />
                         <text x="35" y="30" font-family="sans-serif" font-size="12" fill="currentColor">S2</text>
                     </g>
 
                     <!-- Ventilador de Techo -->
                     <g class="blueprint-symbol" transform="translate(480, 130)">
-                        <circle cx="20" cy="20" r="25" fill="transparent"/>
-                        <circle cx="20" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <path d="M 20,12 C 30,0 40,10 20,20 C 10,30 0,40 20,28 C 30,40 40,30 20,20" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="20" cy="20" r="25" fill="transparent" />
+                        <circle cx="20" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="2" />
+                        <path d="M 20,12 C 30,0 40,10 20,20 C 10,30 0,40 20,28 C 30,40 40,30 20,20" fill="none"
+                            stroke="currentColor" stroke-width="1.5" />
                     </g>
 
                     <!-- Tomacorriente 1 -->
                     <g class="blueprint-symbol" transform="translate(885, 635)">
-                        <circle cx="15" cy="15" r="25" fill="transparent"/>
-                        <circle cx="15" cy="15" r="12" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <line x1="9" y1="0" x2="9" y2="30" stroke="currentColor" stroke-width="2"/>
-                        <line x1="21" y1="0" x2="21" y2="30" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="15" cy="15" r="25" fill="transparent" />
+                        <circle cx="15" cy="15" r="12" fill="none" stroke="currentColor" stroke-width="2" />
+                        <line x1="9" y1="0" x2="9" y2="30" stroke="currentColor" stroke-width="2" />
+                        <line x1="21" y1="0" x2="21" y2="30" stroke="currentColor" stroke-width="2" />
                     </g>
 
                     <!-- Luminaria 2 -->
                     <g class="blueprint-symbol" transform="translate(980, 530)">
-                        <circle cx="20" cy="20" r="25" fill="transparent"/>
-                        <circle cx="20" cy="20" r="16" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <line x1="8" y1="8" x2="32" y2="32" stroke="currentColor" stroke-width="2"/>
-                        <line x1="32" y1="8" x2="8" y2="32" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="20" cy="20" r="25" fill="transparent" />
+                        <circle cx="20" cy="20" r="16" fill="none" stroke="currentColor" stroke-width="2" />
+                        <line x1="8" y1="8" x2="32" y2="32" stroke="currentColor" stroke-width="2" />
+                        <line x1="32" y1="8" x2="8" y2="32" stroke="currentColor" stroke-width="2" />
                     </g>
 
                     <!-- Tomacorriente Especial -->
                     <g class="blueprint-symbol" transform="translate(885, 535)">
-                        <circle cx="15" cy="15" r="25" fill="transparent"/>
-                        <circle cx="15" cy="15" r="12" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <polygon points="15,3 24,22 6,22" fill="currentColor" opacity="0.5"/>
-                        <line x1="9" y1="0" x2="9" y2="30" stroke="currentColor" stroke-width="2"/>
-                        <line x1="21" y1="0" x2="21" y2="30" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="15" cy="15" r="25" fill="transparent" />
+                        <circle cx="15" cy="15" r="12" fill="none" stroke="currentColor" stroke-width="2" />
+                        <polygon points="15,3 24,22 6,22" fill="currentColor" opacity="0.5" />
+                        <line x1="9" y1="0" x2="9" y2="30" stroke="currentColor" stroke-width="2" />
+                        <line x1="21" y1="0" x2="21" y2="30" stroke="currentColor" stroke-width="2" />
                     </g>
 
                     <!-- Motor -->
                     <g class="blueprint-symbol" transform="translate(1030, 130)">
-                        <circle cx="20" cy="20" r="30" fill="transparent"/>
-                        <circle cx="20" cy="20" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <text x="20" y="27" font-family="sans-serif" font-size="20" fill="currentColor" text-anchor="middle" font-weight="bold">M</text>
+                        <circle cx="20" cy="20" r="30" fill="transparent" />
+                        <circle cx="20" cy="20" r="20" fill="none" stroke="currentColor" stroke-width="2" />
+                        <text x="20" y="27" font-family="sans-serif" font-size="20" fill="currentColor"
+                            text-anchor="middle" font-weight="bold">M</text>
                     </g>
                 </svg>
 
                 <!-- Blueprint 2: Esquema de Control Industrial -->
-                <svg id="blueprint-2" class="electrical-blueprint" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <svg id="blueprint-2" class="electrical-blueprint" viewBox="0 0 1200 800"
+                    preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <pattern id="blueprint-grid-2" width="50" height="50" patternUnits="userSpaceOnUse">
-                            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5"/>
-                            <path d="M 25 0 L 25 50 M 0 25 L 50 25" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1"/>
+                            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255, 255, 255, 0.08)"
+                                stroke-width="1.5" />
+                            <path d="M 25 0 L 25 50 M 0 25 L 50 25" fill="none" stroke="rgba(255, 255, 255, 0.03)"
+                                stroke-width="1" />
                         </pattern>
                     </defs>
-                    <rect width="1200" height="800" fill="url(#blueprint-grid-2)"/>
-                    
+                    <rect width="1200" height="800" fill="url(#blueprint-grid-2)" />
+
                     <!-- Líneas Principales -->
-                    <path class="blueprint-line" d="M 100,150 L 1100,150" fill="none" stroke="currentColor" stroke-width="2.5" opacity="0.4"/>
-                    <path class="blueprint-line" d="M 100,650 L 1100,650" fill="none" stroke="currentColor" stroke-width="2.5" opacity="0.4"/>
-                    
-                    <path class="blueprint-line" d="M 300,150 L 300,200 M 300,250 L 300,300 M 300,350 L 300,400 M 300,450 L 300,520 M 300,580 L 300,600 M 300,650 L 300,650" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-                    
-                    <path class="blueprint-line" d="M 600,150 L 600,200 M 600,250 L 600,520 M 600,580 L 600,650" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-                    <path class="blueprint-line" d="M 900,150 L 900,420 M 900,480 L 900,650" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+                    <path class="blueprint-line" d="M 100,150 L 1100,150" fill="none" stroke="currentColor"
+                        stroke-width="2.5" opacity="0.4" />
+                    <path class="blueprint-line" d="M 100,650 L 1100,650" fill="none" stroke="currentColor"
+                        stroke-width="2.5" opacity="0.4" />
+
+                    <path class="blueprint-line"
+                        d="M 300,150 L 300,200 M 300,250 L 300,300 M 300,350 L 300,400 M 300,450 L 300,520 M 300,580 L 300,600 M 300,650 L 300,650"
+                        fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3" />
+
+                    <path class="blueprint-line" d="M 600,150 L 600,200 M 600,250 L 600,520 M 600,580 L 600,650"
+                        fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3" />
+                    <path class="blueprint-line" d="M 900,150 L 900,420 M 900,480 L 900,650" fill="none"
+                        stroke="currentColor" stroke-width="1.5" opacity="0.3" />
 
                     <!-- Enclavamiento / Latching -->
-                    <path class="blueprint-line" d="M 300,400 L 450,400 L 450,420 M 450,480 L 450,500 L 300,500" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-                    
+                    <path class="blueprint-line" d="M 300,400 L 450,400 L 450,420 M 450,480 L 450,500 L 300,500"
+                        fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3" />
+
                     <!-- Branch from K1 to TR and H1 -->
-                    <path class="blueprint-line" d="M 300,400 L 600,400 L 900,400" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.3"/>
+                    <path class="blueprint-line" d="M 300,400 L 600,400 L 900,400" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-dasharray="6,4" opacity="0.3" />
 
                     <!-- Símbolos -->
                     <!-- Fusible F1 -->
                     <g class="blueprint-symbol" transform="translate(290, 200)">
-                        <rect x="-10" y="0" width="40" height="50" fill="transparent"/>
-                        <rect x="0" y="0" width="20" height="50" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <line x1="10" y1="0" x2="10" y2="50" stroke="currentColor" stroke-width="1"/>
+                        <rect x="-10" y="0" width="40" height="50" fill="transparent" />
+                        <rect x="0" y="0" width="20" height="50" fill="none" stroke="currentColor" stroke-width="2" />
+                        <line x1="10" y1="0" x2="10" y2="50" stroke="currentColor" stroke-width="1" />
                         <text x="-25" y="30" font-family="sans-serif" font-size="12" fill="currentColor">F1</text>
                     </g>
                     <!-- Fusible F3 -->
                     <g class="blueprint-symbol" transform="translate(590, 200)">
-                        <rect x="-10" y="0" width="40" height="50" fill="transparent"/>
-                        <rect x="0" y="0" width="20" height="50" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <line x1="10" y1="0" x2="10" y2="50" stroke="currentColor" stroke-width="1"/>
+                        <rect x="-10" y="0" width="40" height="50" fill="transparent" />
+                        <rect x="0" y="0" width="20" height="50" fill="none" stroke="currentColor" stroke-width="2" />
+                        <line x1="10" y1="0" x2="10" y2="50" stroke="currentColor" stroke-width="1" />
                         <text x="-25" y="30" font-family="sans-serif" font-size="12" fill="currentColor">F3</text>
                     </g>
 
                     <!-- Relé Térmico (OL) -->
                     <g class="blueprint-symbol" transform="translate(280, 300)">
-                        <rect x="-10" y="0" width="60" height="50" fill="transparent"/>
-                        <path d="M 10,0 L 20,25 L 10,50 M 30,0 L 20,25 L 30,50" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <rect x="-10" y="0" width="60" height="50" fill="transparent" />
+                        <path d="M 10,0 L 20,25 L 10,50 M 30,0 L 20,25 L 30,50" fill="none" stroke="currentColor"
+                            stroke-width="2" />
                         <text x="-25" y="30" font-family="sans-serif" font-size="12" fill="currentColor">OL</text>
                     </g>
 
                     <!-- Botón STOP (N.C.) -->
                     <g class="blueprint-symbol" transform="translate(280, 400)">
-                        <rect x="-10" y="-10" width="60" height="70" fill="transparent"/>
-                        <circle cx="10" cy="0" r="4" fill="currentColor"/>
-                        <circle cx="30" cy="0" r="4" fill="currentColor"/>
-                        <path d="M 12,50 L 28,50 C 28,60 12,60 12,50" fill="currentColor" opacity="0"/>
+                        <rect x="-10" y="-10" width="60" height="70" fill="transparent" />
+                        <circle cx="10" cy="0" r="4" fill="currentColor" />
+                        <circle cx="30" cy="0" r="4" fill="currentColor" />
+                        <path d="M 12,50 L 28,50 C 28,60 12,60 12,50" fill="currentColor" opacity="0" />
                         <!-- NC Contact -->
-                        <line x1="10" y1="0" x2="30" y2="0" stroke="currentColor" stroke-width="2"/>
-                        <line x1="5" y1="12" x2="35" y2="12" stroke="currentColor" stroke-width="2"/>
-                        <line x1="20" y1="12" x2="20" y2="-20" stroke="currentColor" stroke-width="2"/>
+                        <line x1="10" y1="0" x2="30" y2="0" stroke="currentColor" stroke-width="2" />
+                        <line x1="5" y1="12" x2="35" y2="12" stroke="currentColor" stroke-width="2" />
+                        <line x1="20" y1="12" x2="20" y2="-20" stroke="currentColor" stroke-width="2" />
                         <text x="-35" y="5" font-family="sans-serif" font-size="12" fill="currentColor">STOP</text>
                     </g>
 
                     <!-- Botón START (N.O.) -->
                     <g class="blueprint-symbol" transform="translate(280, 450)">
-                        <rect x="-10" y="-10" width="60" height="70" fill="transparent"/>
-                        <line x1="10" y1="0" x2="30" y2="0" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="10" cy="0" r="4" fill="currentColor"/>
-                        <circle cx="30" cy="0" r="4" fill="currentColor"/>
-                        <line x1="5" y1="-12" x2="35" y2="-12" stroke="currentColor" stroke-width="2"/>
-                        <line x1="20" y1="-12" x2="20" y2="50" stroke="currentColor" stroke-width="2"/>
-                        <path d="M 12,50 L 28,50 C 28,60 12,60 12,50" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <rect x="-10" y="-10" width="60" height="70" fill="transparent" />
+                        <line x1="10" y1="0" x2="30" y2="0" stroke="currentColor" stroke-width="2" />
+                        <circle cx="10" cy="0" r="4" fill="currentColor" />
+                        <circle cx="30" cy="0" r="4" fill="currentColor" />
+                        <line x1="5" y1="-12" x2="35" y2="-12" stroke="currentColor" stroke-width="2" />
+                        <line x1="20" y1="-12" x2="20" y2="50" stroke="currentColor" stroke-width="2" />
+                        <path d="M 12,50 L 28,50 C 28,60 12,60 12,50" fill="none" stroke="currentColor"
+                            stroke-width="2" />
                         <text x="-40" y="30" font-family="sans-serif" font-size="12" fill="currentColor">START</text>
                     </g>
 
                     <!-- Contacto Aux K1 (N.O.) -->
                     <g class="blueprint-symbol" transform="translate(430, 420)">
-                        <rect x="-10" y="0" width="60" height="60" fill="transparent"/>
-                        <line x1="20" y1="0" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
-                        <line x1="20" y1="40" x2="20" y2="60" stroke="currentColor" stroke-width="2"/>
-                        <line x1="10" y1="20" x2="30" y2="20" stroke="currentColor" stroke-width="2"/>
-                        <line x1="10" y1="40" x2="30" y2="40" stroke="currentColor" stroke-width="2"/>
+                        <rect x="-10" y="0" width="60" height="60" fill="transparent" />
+                        <line x1="20" y1="0" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="20" y1="40" x2="20" y2="60" stroke="currentColor" stroke-width="2" />
+                        <line x1="10" y1="20" x2="30" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="10" y1="40" x2="30" y2="40" stroke="currentColor" stroke-width="2" />
                         <text x="40" y="35" font-family="sans-serif" font-size="12" fill="currentColor">K1</text>
                     </g>
-                    
+
                     <!-- Bobina Contactor K1 -->
                     <g class="blueprint-symbol" transform="translate(280, 520)">
-                        <circle cx="20" cy="30" r="30" fill="transparent"/>
-                        <circle cx="20" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <text x="20" y="35" font-family="sans-serif" font-size="16" fill="currentColor" text-anchor="middle">K1</text>
+                        <circle cx="20" cy="30" r="30" fill="transparent" />
+                        <circle cx="20" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="2" />
+                        <text x="20" y="35" font-family="sans-serif" font-size="16" fill="currentColor"
+                            text-anchor="middle">K1</text>
                     </g>
 
                     <!-- Fusible F2 -->
                     <g class="blueprint-symbol" transform="translate(290, 600)">
-                        <rect x="-10" y="0" width="40" height="50" fill="transparent"/>
-                        <rect x="0" y="0" width="20" height="50" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <line x1="10" y1="0" x2="10" y2="50" stroke="currentColor" stroke-width="1"/>
+                        <rect x="-10" y="0" width="40" height="50" fill="transparent" />
+                        <rect x="0" y="0" width="20" height="50" fill="none" stroke="currentColor" stroke-width="2" />
+                        <line x1="10" y1="0" x2="10" y2="50" stroke="currentColor" stroke-width="1" />
                         <text x="-25" y="30" font-family="sans-serif" font-size="12" fill="currentColor">F2</text>
                     </g>
 
                     <!-- Bobina Temporizador TR -->
                     <g class="blueprint-symbol" transform="translate(580, 520)">
-                        <circle cx="20" cy="30" r="30" fill="transparent"/>
-                        <rect x="0" y="10" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <path d="M 0,10 L 20,30 L 40,10" fill="none" stroke="currentColor" stroke-width="1"/>
-                        <text x="20" y="45" font-family="sans-serif" font-size="14" fill="currentColor" text-anchor="middle">TR</text>
+                        <circle cx="20" cy="30" r="30" fill="transparent" />
+                        <rect x="0" y="10" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" />
+                        <path d="M 0,10 L 20,30 L 40,10" fill="none" stroke="currentColor" stroke-width="1" />
+                        <text x="20" y="45" font-family="sans-serif" font-size="14" fill="currentColor"
+                            text-anchor="middle">TR</text>
                     </g>
 
                     <!-- Contacto TR (N.O. Time Delay) -->
                     <g class="blueprint-symbol" transform="translate(880, 420)">
-                        <rect x="-10" y="0" width="60" height="60" fill="transparent"/>
-                        <line x1="20" y1="0" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
-                        <line x1="20" y1="40" x2="20" y2="60" stroke="currentColor" stroke-width="2"/>
-                        <line x1="10" y1="20" x2="30" y2="20" stroke="currentColor" stroke-width="2"/>
-                        <line x1="10" y1="40" x2="30" y2="40" stroke="currentColor" stroke-width="2"/>
-                        <path d="M 10,20 C 10,10 20,10 20,20" fill="none" stroke="currentColor" stroke-width="1"/>
+                        <rect x="-10" y="0" width="60" height="60" fill="transparent" />
+                        <line x1="20" y1="0" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="20" y1="40" x2="20" y2="60" stroke="currentColor" stroke-width="2" />
+                        <line x1="10" y1="20" x2="30" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="10" y1="40" x2="30" y2="40" stroke="currentColor" stroke-width="2" />
+                        <path d="M 10,20 C 10,10 20,10 20,20" fill="none" stroke="currentColor" stroke-width="1" />
                         <text x="40" y="35" font-family="sans-serif" font-size="12" fill="currentColor">TR</text>
                     </g>
 
                     <!-- Luz Piloto (H1) -->
                     <g class="blueprint-symbol" transform="translate(880, 480)">
-                        <circle cx="20" cy="30" r="30" fill="transparent"/>
-                        <circle cx="20" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <line x1="6" y1="16" x2="34" y2="44" stroke="currentColor" stroke-width="2"/>
-                        <line x1="34" y1="16" x2="6" y2="44" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="20" cy="30" r="30" fill="transparent" />
+                        <circle cx="20" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="2" />
+                        <line x1="6" y1="16" x2="34" y2="44" stroke="currentColor" stroke-width="2" />
+                        <line x1="34" y1="16" x2="6" y2="44" stroke="currentColor" stroke-width="2" />
                         <text x="50" y="35" font-family="sans-serif" font-size="14" fill="currentColor">H1</text>
                     </g>
                 </svg>
 
                 <!-- Blueprint 3: Distribución de Potencia -->
-                <svg id="blueprint-3" class="electrical-blueprint" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <svg id="blueprint-3" class="electrical-blueprint" viewBox="0 0 1200 800"
+                    preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <pattern id="blueprint-grid-3" width="50" height="50" patternUnits="userSpaceOnUse">
-                            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5"/>
-                            <path d="M 25 0 L 25 50 M 0 25 L 50 25" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1"/>
+                            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255, 255, 255, 0.08)"
+                                stroke-width="1.5" />
+                            <path d="M 25 0 L 25 50 M 0 25 L 50 25" fill="none" stroke="rgba(255, 255, 255, 0.03)"
+                                stroke-width="1" />
                         </pattern>
                     </defs>
-                    <rect width="1200" height="800" fill="url(#blueprint-grid-3)"/>
+                    <rect width="1200" height="800" fill="url(#blueprint-grid-3)" />
 
                     <!-- Líneas Triples (Trifásico) -->
-                    <path class="blueprint-line" d="M 200,50 L 200,150 M 215,50 L 215,150 M 230,50 L 230,150" fill="none" stroke="currentColor" stroke-width="2" opacity="0.4"/> <!-- Grid input -->
-                    <path class="blueprint-line" d="M 200,190 L 200,300 M 215,190 L 215,300 M 230,190 L 230,300" fill="none" stroke="currentColor" stroke-width="2" opacity="0.4"/> <!-- After Main Breaker -->
-                    
-                    <path class="blueprint-line" d="M 215,450 L 950,450" fill="none" stroke="currentColor" stroke-width="3" opacity="0.4"/> <!-- Main Busbar -->
-                    
-                    <path class="blueprint-line" d="M 950,150 L 950,300 M 935,150 L 935,300 M 965,150 L 965,300" fill="none" stroke="currentColor" stroke-width="2" opacity="0.4"/> <!-- Gen input -->
-                    
+                    <path class="blueprint-line" d="M 200,50 L 200,150 M 215,50 L 215,150 M 230,50 L 230,150"
+                        fill="none" stroke="currentColor" stroke-width="2" opacity="0.4" /> <!-- Grid input -->
+                    <path class="blueprint-line" d="M 200,190 L 200,300 M 215,190 L 215,300 M 230,190 L 230,300"
+                        fill="none" stroke="currentColor" stroke-width="2" opacity="0.4" /> <!-- After Main Breaker -->
+
+                    <path class="blueprint-line" d="M 215,450 L 950,450" fill="none" stroke="currentColor"
+                        stroke-width="3" opacity="0.4" /> <!-- Main Busbar -->
+
+                    <path class="blueprint-line" d="M 950,150 L 950,300 M 935,150 L 935,300 M 965,150 L 965,300"
+                        fill="none" stroke="currentColor" stroke-width="2" opacity="0.4" /> <!-- Gen input -->
+
                     <!-- Transfer to Busbar -->
-                    <path class="blueprint-line" d="M 215,300 L 400,300" fill="none" stroke="currentColor" stroke-width="3" opacity="0.4"/>
-                    <path class="blueprint-line" d="M 950,300 L 700,300" fill="none" stroke="currentColor" stroke-width="3" opacity="0.4"/>
-                    
-                    <path class="blueprint-line" d="M 550,350 L 550,450" fill="none" stroke="currentColor" stroke-width="3" opacity="0.4"/> <!-- ATS to Busbar -->
-                    
+                    <path class="blueprint-line" d="M 215,300 L 400,300" fill="none" stroke="currentColor"
+                        stroke-width="3" opacity="0.4" />
+                    <path class="blueprint-line" d="M 950,300 L 700,300" fill="none" stroke="currentColor"
+                        stroke-width="3" opacity="0.4" />
+
+                    <path class="blueprint-line" d="M 550,350 L 550,450" fill="none" stroke="currentColor"
+                        stroke-width="3" opacity="0.4" /> <!-- ATS to Busbar -->
+
                     <!-- Load connections -->
-                    <path class="blueprint-line" d="M 550,450 L 550,600 M 535,450 L 535,600 M 565,450 L 565,600" fill="none" stroke="currentColor" stroke-width="2" opacity="0.4"/> <!-- Motor M1 -->
-                    
+                    <path class="blueprint-line" d="M 550,450 L 550,600 M 535,450 L 535,600 M 565,450 L 565,600"
+                        fill="none" stroke="currentColor" stroke-width="2" opacity="0.4" /> <!-- Motor M1 -->
+
                     <!-- Cap Bank -->
-                    <path class="blueprint-line" d="M 850,450 L 850,550" fill="none" stroke="currentColor" stroke-width="2" opacity="0.4"/>
-                    
+                    <path class="blueprint-line" d="M 850,450 L 850,550" fill="none" stroke="currentColor"
+                        stroke-width="2" opacity="0.4" />
+
                     <!-- Transformador de Corriente (CT) -->
                     <g class="blueprint-symbol" transform="translate(185, 100)">
-                        <rect x="0" y="0" width="60" height="20" fill="none" stroke="currentColor" stroke-width="2" rx="10"/>
+                        <rect x="0" y="0" width="60" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            rx="10" />
                         <text x="-20" y="15" font-family="sans-serif" font-size="12" fill="currentColor">CT</text>
                     </g>
 
                     <!-- Interruptor Principal (Main Breaker) -->
                     <g class="blueprint-symbol" transform="translate(180, 150)">
-                        <rect x="0" y="0" width="70" height="40" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <path d="M 0,20 L 70,20 M 35,0 L 35,40" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <rect x="0" y="0" width="70" height="40" fill="none" stroke="currentColor" stroke-width="2" />
+                        <path d="M 0,20 L 70,20 M 35,0 L 35,40" fill="none" stroke="currentColor" stroke-width="2" />
                     </g>
-                    
+
                     <!-- Generador -->
                     <g class="blueprint-symbol" transform="translate(910, 50)">
-                        <circle cx="40" cy="40" r="50" fill="transparent"/>
-                        <circle cx="40" cy="40" r="35" fill="none" stroke="currentColor" stroke-width="3"/>
-                        <text x="40" y="48" font-family="sans-serif" font-size="24" fill="currentColor" text-anchor="middle" font-weight="bold">G</text>
+                        <circle cx="40" cy="40" r="50" fill="transparent" />
+                        <circle cx="40" cy="40" r="35" fill="none" stroke="currentColor" stroke-width="3" />
+                        <text x="40" y="48" font-family="sans-serif" font-size="24" fill="currentColor"
+                            text-anchor="middle" font-weight="bold">G</text>
                     </g>
 
                     <!-- ATS (Automatic Transfer Switch) -->
                     <g class="blueprint-symbol" transform="translate(380, 250)">
-                        <rect x="0" y="0" width="340" height="100" fill="transparent"/>
-                        <rect x="0" y="0" width="340" height="100" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="10,5"/>
+                        <rect x="0" y="0" width="340" height="100" fill="transparent" />
+                        <rect x="0" y="0" width="340" height="100" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-dasharray="10,5" />
                         <!-- Switch logic inside -->
-                        <circle cx="20" cy="50" r="6" fill="currentColor"/> <!-- Grid input node -->
-                        <circle cx="320" cy="50" r="6" fill="currentColor"/> <!-- Gen input node -->
-                        <circle cx="170" cy="100" r="6" fill="currentColor"/> <!-- Out node -->
-                        <path d="M 20,50 L 150,80" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <text x="170" y="40" font-family="sans-serif" font-size="18" fill="currentColor" text-anchor="middle">ATS</text>
+                        <circle cx="20" cy="50" r="6" fill="currentColor" /> <!-- Grid input node -->
+                        <circle cx="320" cy="50" r="6" fill="currentColor" /> <!-- Gen input node -->
+                        <circle cx="170" cy="100" r="6" fill="currentColor" /> <!-- Out node -->
+                        <path d="M 20,50 L 150,80" fill="none" stroke="currentColor" stroke-width="2" />
+                        <text x="170" y="40" font-family="sans-serif" font-size="18" fill="currentColor"
+                            text-anchor="middle">ATS</text>
                     </g>
-                    
+
                     <!-- Motor Trifásico Pesado (M1) -->
                     <g class="blueprint-symbol" transform="translate(510, 600)">
-                        <circle cx="40" cy="40" r="45" fill="transparent"/>
-                        <circle cx="40" cy="40" r="35" fill="none" stroke="currentColor" stroke-width="3"/>
-                        <text x="40" y="48" font-family="sans-serif" font-size="24" fill="currentColor" text-anchor="middle" font-weight="bold">M1</text>
-                        <path d="M 10,75 L 70,75 M 15,80 L 65,80 M 20,85 L 60,85" fill="none" stroke="currentColor" stroke-width="2"/> <!-- Ground -->
+                        <circle cx="40" cy="40" r="45" fill="transparent" />
+                        <circle cx="40" cy="40" r="35" fill="none" stroke="currentColor" stroke-width="3" />
+                        <text x="40" y="48" font-family="sans-serif" font-size="24" fill="currentColor"
+                            text-anchor="middle" font-weight="bold">M1</text>
+                        <path d="M 10,75 L 70,75 M 15,80 L 65,80 M 20,85 L 60,85" fill="none" stroke="currentColor"
+                            stroke-width="2" /> <!-- Ground -->
                     </g>
 
                     <!-- Banco de Capacitores -->
                     <g class="blueprint-symbol" transform="translate(810, 550)">
-                        <rect x="-10" y="0" width="100" height="60" fill="transparent"/>
-                        <line x1="20" y1="0" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>
-                        <line x1="50" y1="0" x2="50" y2="20" stroke="currentColor" stroke-width="2"/>
-                        <line x1="80" y1="0" x2="80" y2="20" stroke="currentColor" stroke-width="2"/>
-                        
-                        <line x1="10" y1="20" x2="30" y2="20" stroke="currentColor" stroke-width="2"/>
-                        <line x1="10" y1="25" x2="30" y2="25" stroke="currentColor" stroke-width="2"/>
-                        
-                        <line x1="40" y1="20" x2="60" y2="20" stroke="currentColor" stroke-width="2"/>
-                        <line x1="40" y1="25" x2="60" y2="25" stroke="currentColor" stroke-width="2"/>
-                        
-                        <line x1="70" y1="20" x2="90" y2="20" stroke="currentColor" stroke-width="2"/>
-                        <line x1="70" y1="25" x2="90" y2="25" stroke="currentColor" stroke-width="2"/>
-                        <text x="50" y="50" font-family="sans-serif" font-size="14" fill="currentColor" text-anchor="middle">CAP BANK</text>
+                        <rect x="-10" y="0" width="100" height="60" fill="transparent" />
+                        <line x1="20" y1="0" x2="20" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="50" y1="0" x2="50" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="80" y1="0" x2="80" y2="20" stroke="currentColor" stroke-width="2" />
+
+                        <line x1="10" y1="20" x2="30" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="10" y1="25" x2="30" y2="25" stroke="currentColor" stroke-width="2" />
+
+                        <line x1="40" y1="20" x2="60" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="40" y1="25" x2="60" y2="25" stroke="currentColor" stroke-width="2" />
+
+                        <line x1="70" y1="20" x2="90" y2="20" stroke="currentColor" stroke-width="2" />
+                        <line x1="70" y1="25" x2="90" y2="25" stroke="currentColor" stroke-width="2" />
+                        <text x="50" y="50" font-family="sans-serif" font-size="14" fill="currentColor"
+                            text-anchor="middle">CAP BANK</text>
                     </g>
                 </svg>
             </div>
@@ -440,17 +489,19 @@
                     <h2 class="section-title">Sobre Nosotros</h2>
                     <p
                         style="font-size: 1.2rem; line-height: 1.8; color: #444; max-width: 900px; margin: 0 auto 30px; text-align: center; font-weight: 500;">
-                        Fundada en el año 2026, ELECCON Ingeniería nace con la firme visión de modernizar y
-                        profesionalizar los servicios eléctricos en la región.
+                        Fundada en el año 2026, ELECCON Ingeniería nace con la firme visión de proveer servicios
+                        eléctricos en la región,
+                        con el respaldo tecnico-ingenieril, con la calidad, transparecia y documentacion en cada
+                        proyecto que se realiza.
                     </p>
-                    <p
+                    <!-- <p
                         style="font-size: 1.1rem; line-height: 1.8; color: #666; max-width: 900px; margin: 0 auto 40px; text-align: center;">
                         Combinamos el rigor de la ingeniería eléctrica clásica con la implementación de tecnologías de
                         la información y sistemas automáticos para brindar a nuestros clientes soluciones eficientes,
                         transparentes y rigurosamente documentadas. Nuestro compromiso es garantizar un respaldo
                         técnico-científico sólido en la implementación y en los tiempos acordados, mejorando la calidad
                         de vida y el éxito de cada proyecto.
-                    </p>
+                    </p> -->
                 </div>
 
                 <!-- 3 Pilares Resumidos en Index -->
@@ -463,8 +514,9 @@
                             style="color: var(--secondary-color); font-size: 2rem;">verified</span>
                         <div>
                             <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Calidad y Respaldo</h3>
-                            <p style="font-size: 0.95rem; line-height: 1.5; color: #666;">Proyectos rigurosamente
-                                documentados y avalados por el CFIA bajo estrictas normas de seguridad.</p>
+                            <p style="font-size: 0.95rem; line-height: 1.5; color: #666;">Proyectos
+                                documentados y avalados por el CFIA bajo estrictas normas de eleectricas y de seguridad.
+                            </p>
                         </div>
                     </div>
 
@@ -476,7 +528,7 @@
                         <div>
                             <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Innovación Tecnológica</h3>
                             <p style="font-size: 0.95rem; line-height: 1.5; color: #666;">Integración de nuevas
-                                tecnologías, sistemas inteligentes para el hogar e inteligencia artificial.</p>
+                                tecnologías, sistemas inteligentes y de control.</p>
                         </div>
                     </div>
 
