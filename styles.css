@@ -258,7 +258,6 @@ Lógica de iluminación y movimiento al pasar el cursor (deshabilitada por ahora
     transform: translateY(40px);
     animation: slideUpFade 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
-
 .hero-slide p {
     flex: 1;
     font-size: clamp(1.4rem, 2vw + 0.8rem, 1.8rem);
