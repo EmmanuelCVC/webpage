@@ -244,7 +244,7 @@ Lógica de iluminación y movimiento al pasar el cursor (deshabilitada por ahora
 
 .hero-slide h2 {
     font-family: var(--font-heading);
-    font-size: 4.5rem;
+    font-size: clamp(3rem, 5vw + 1.5rem, 4.5rem);
     margin-bottom: 25px;
     line-height: 1.1;
     font-weight: 800;
@@ -255,7 +255,7 @@ Lógica de iluminación y movimiento al pasar el cursor (deshabilitada por ahora
 }
 
 .hero-slide p {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 2vw + 0.8rem, 1.8rem);
     margin-bottom: 0;
     max-width: 700px;
     opacity: 0;
@@ -681,10 +681,6 @@ footer {
 
     .hero-content {
         margin-top: 60px;
-    }
-
-    .hero-slide h2 {
-        font-size: 2rem;
     }
 
     #main-header .container {
