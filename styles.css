@@ -94,11 +94,10 @@ nav a:hover {
     animation: gradientBG 15s ease infinite;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     position: relative;
     padding-top: 80px;
     padding-bottom: 100px;
-    padding-left: 5%;
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -296,8 +295,19 @@ Lógica de iluminación y movimiento al pasar el cursor (deshabilitada por ahora
 #hero-cta-wrapper {
     position: absolute;
     bottom: 50px;
-    right: 5%;
+    left: 0;
+    right: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
     z-index: 10;
+    pointer-events: none;
+}
+
+#hero-cta-wrapper .cta-button {
+    pointer-events: auto;
 }
 
 @keyframes slideUpFade {
@@ -719,8 +729,7 @@ footer {
     }
 
     #hero-cta-wrapper {
-        right: 50%;
-        transform: translateX(50%);
+        justify-content: center;
         bottom: 30px;
     }
 
