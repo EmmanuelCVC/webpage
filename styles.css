@@ -88,7 +88,6 @@ nav a:hover {
 
 /* Hero Section */
 #hero {
-    min-height: clamp(500px, 100vh, 850px);
     background: linear-gradient(-45deg, #000428, #004e92, #001233, #002b5e);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
@@ -123,6 +122,7 @@ nav a:hover {
     width: 100%;
     height: 100%;
     z-index: 1;
+    background: linear-gradient(to top, #f4f7f6 0%, transparent 60px);
 }
 
 #hero::before {
