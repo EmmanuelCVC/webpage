@@ -88,15 +88,15 @@ nav a:hover {
 
 /* Hero Section */
 #hero {
-    min-height: 100vh;
+    min-height: clamp(500px, 100vh, 850px);
     background: linear-gradient(-45deg, #000428, #004e92, #001233, #002b5e);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
-    padding-top: 80px;
+    padding-top: 150px;
     padding-bottom: 100px;
     overflow: hidden;
     box-sizing: border-box;
@@ -213,7 +213,7 @@ Lógica de iluminación y movimiento al pasar el cursor (deshabilitada por ahora
     max-width: 1200px;
     padding: 0 20px;
     box-sizing: border-box;
-    margin-top: 15vh;
+    margin-top: 0;
 }
 
 .hero-slider-container {
@@ -293,17 +293,11 @@ Lógica de iluminación y movimiento al pasar el cursor (deshabilitada por ahora
 }
 
 #hero-cta-wrapper {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    right: 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    position: relative;
+    margin-top: 40px;
     display: flex;
     justify-content: flex-end;
     z-index: 10;
-    pointer-events: none;
 }
 
 #hero-cta-wrapper .cta-button {
