@@ -713,7 +713,12 @@ footer {
     #hero {
         padding-top: 90px;
         align-items: flex-start;
+        /* Aseguramos que la ola de colores (gradient) cruce bien el ancho en portrait */
+        background-size: 600% 100%;
     }
+
+    /* Ajuste de la onda senoidal para que cruce a lo largo de la pantalla pequeña */
+    /* Eliminado porque no era el requerimiento */
 
     .hero-content {
         margin-top: 40px;
