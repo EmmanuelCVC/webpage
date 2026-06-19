@@ -97,7 +97,7 @@ nav a:hover {
     justify-content: center;
     position: relative;
     padding-top: 150px;
-    padding-bottom: 200px;
+    padding-bottom: 60px;
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -259,6 +259,7 @@ Lógica de iluminación y movimiento al pasar el cursor (deshabilitada por ahora
     transform: translateY(40px);
     animation: slideUpFade 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
+
 .hero-slide p {
     flex: 1;
     font-size: clamp(1.4rem, 2vw + 0.8rem, 1.8rem);
@@ -358,7 +359,7 @@ section {
     border-radius: 20px;
     padding: 60px 40px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    margin-top: -100px;
+    margin-top: -30px;
     position: relative;
     z-index: 20;
     border: 1px solid rgba(255, 255, 255, 0.2);
