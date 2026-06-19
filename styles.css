@@ -677,6 +677,12 @@ footer {
     transform: translateY(0);
 }
 
+.load-anim {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpFade 0.8s ease-out 0.8s forwards;
+}
+
 /* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
