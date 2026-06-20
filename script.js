@@ -306,9 +306,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Scroll to Top Button
         if (scrollTopBtn) {
             if (window.scrollY > 300) {
-                scrollTopBtn.classList.add('show');
+                scrollTopBtn.classList.remove('hidden');
+                scrollTopBtn.classList.add('flex');
             } else {
-                scrollTopBtn.classList.remove('show');
+                scrollTopBtn.classList.add('hidden');
+                scrollTopBtn.classList.remove('flex');
             }
         }
 

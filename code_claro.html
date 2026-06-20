@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELECCON Ingeniería - High Voltage &amp; Industrial Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Rajdhani:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "background": "#F8FAFC",
+                "surface": "#FFFFFF",
+                "surface-container-lowest": "#FFFFFF",
+                "surface-container-low": "#F8FAFC",
+                "surface-container": "#F1F5F9",
+                "surface-container-high": "#E2E8F0",
+                "surface-container-highest": "#CBD5E1",
+                "surface-variant": "#F1F5F9",
+                "on-surface": "#0F172A",
+                "on-surface-variant": "#334155",
+                "text-primary": "#020617",
+                "text-secondary": "#475569",
+                "primary": "#1D4ED8",
+                "primary-container": "#1E40AF",
+                "on-primary-container": "#FFFFFF",
+                "secondary": "#475569",
+                "outline-variant": "#CBD5E1",
+                "outline": "#94A3B8",
+                "tertiary": "#0369A1"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-md": "16px",
+                "stroke-thin": "1px",
+                "gutter": "24px",
+                "margin-sm": "8px",
+                "grid-base": "60px",
+                "sub-grid": "12px",
+                "stroke-heavy": "2px",
+                "margin-desktop": "64px",
+                "container-max": "1280px",
+                "margin-mobile": "20px"
+        },
+        "fontFamily": {
+                "display-lg": [
+                        "Rajdhani"
+                ],
+                "body-md": [
+                        "Montserrat"
+                ],
+                "label-md": [
+                        "Rajdhani"
+                ],
+                "label-sm": [
+                        "Rajdhani"
+                ],
+                "headline-sm": [
+                        "Rajdhani"
+                ],
+                "body-lg": [
+                        "Montserrat"
+                ],
+                "display-md": [
+                        "Rajdhani"
+                ],
+                "headline-md": [
+                        "Rajdhani"
+                ],
+                "headline-lg": [
+                        "Rajdhani"
+                ]
+        },
+        "fontSize": {
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "14px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-md": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-sm": [
+                        "10px",
+                        {
+                                "lineHeight": "1.0",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-sm": [
+                        "20px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "500"
+                        }
+                ],
+                "display-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .blueprint-bg {
+            background-color: theme('colors.background');
+            background-image: 
+                linear-gradient(theme('colors.outline-variant') 1px, transparent 1px),
+                linear-gradient(90deg, theme('colors.outline-variant') 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .btn-primary {
+            @apply bg-primary-container text-on-primary-container font-label-md text-label-md uppercase px-6 py-3 rounded-none shadow-[4px_4px_0px_0px_#1D4ED8] hover:shadow-[2px_2px_0px_0px_#1D4ED8] hover:translate-x-[2px] hover:translate-y-[2px] transition-all border border-primary-container;
+        }
+        .btn-secondary {
+            @apply bg-transparent text-primary-container font-label-md text-label-md uppercase px-6 py-3 rounded-none border-2 border-primary-container hover:bg-surface-container transition-colors;
+        }
+        .card-industrial {
+            @apply bg-surface border border-outline-variant shadow-sm hover:shadow-md transition-shadow rounded-none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col blueprint-bg">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 backdrop-blur-md w-full top-0 fixed border-b border-outline-variant z-50 shadow-sm">
+<div class="flex justify-between items-center w-full px-grid-base h-[60px] max-w-full mx-auto">
+<div class="flex items-center h-full w-32 font-bold text-primary">{{DATA:DOCUMENT:DOCUMENT_5}}</div>
+<div class="hidden md:flex space-x-8 items-center"><a class="text-on-surface-variant font-medium hover:text-primary font-label-md text-label-md uppercase cursor-pointer hover:opacity-80 transition-all duration-200" href="#">Servicios</a><a class="text-on-surface-variant font-medium hover:text-primary font-label-md text-label-md uppercase cursor-pointer hover:opacity-80 transition-all duration-200" href="#">Nosotros</a><a class="text-on-surface-variant font-medium hover:text-primary font-label-md text-label-md uppercase cursor-pointer hover:opacity-80 transition-all duration-200" href="#">Contacto</a></div>
+<div class="hidden md:block">
+<button class="btn-primary">SOLICITAR COTIZACIÓN</button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary text-3xl cursor-pointer">menu</span>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center w-full mt-[60px]">
+<!-- Hero Section -->
+<section class="w-full relative min-h-[819px] flex items-center justify-center border-b border-outline-variant overflow-hidden bg-surface-container">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0 opacity-20 mix-blend-luminosity">
+<div class="w-full h-full bg-cover bg-center" data-alt="A highly detailed, wide-angle photograph of a massive industrial electrical substation at dusk. Complex steel scaffolding, high-voltage transformers, and thick ceramic insulators are silhouetted against a deep, moody blue sky. Dramatic, stark lighting highlights the metallic textures and precise engineering geometry. The aesthetic is brutalist, highly technical, and strictly professional, utilizing a color palette dominated by deep navys, steely greys, and stark whites, with subtle glints of metallic reflection." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDv67zRqM9eW3NJjBj1_aW1q2Tt3I2YoIwpfXsiHQXuyC9KFWO-hLmnP9y6_QspZc1JEet8CXKfdlB3uBDPt-T-AIZmlwhprp2h3IB-aN3Vv3n7vXBrG_oVf2SJuAkK9XE4MC0egNVw6KoEqIduxEyIr41uHsUNeEdNYLomuMCev6FWnlUNUJW6Guf4URbT96EuVABzGeuRJMI7tK48B7t7GswTirPBVo951DEdSE0RLVYzByb94hHNr2YhmZ5abkERtWW7qd_xP_s')"></div>
+</div>
+<!-- Grid overlay -->
+<div class="absolute inset-0 z-10 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+<div class="relative z-20 max-w-container-max w-full px-margin-mobile md:px-margin-desktop py-20 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="w-full md:w-2/3">
+<div class="inline-block bg-white/60 backdrop-blur-sm border border-outline-variant px-3 py-1 mb-6">
+<span class="font-label-sm text-label-sm text-primary-container tracking-widest uppercase">PRECISION ENGINEERED INFRASTRUCTURE</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-text-primary mb-6">
+                        INDUSTRIAL-GRADE <br/> ELECTRICAL SOLUTIONS
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl border-l-4 border-primary-container pl-4">
+                        Delivering uncompromising reliability and rigorous safety standards for mission-critical high-voltage systems and industrial facilities.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="btn-primary">GET A TECHNICAL CONSULTATION</button>
+<button class="bg-surface/80 text-text-primary font-label-md text-label-md uppercase px-6 py-3 rounded-none border border-outline-variant hover:bg-surface transition-colors">VIEW CAPABILITIES</button>
+</div>
+</div>
+<!-- Schematic Graphic Element -->
+<div class="hidden md:block w-1/3 relative h-64 border border-outline-variant bg-surface/80 backdrop-blur-md p-4 shadow-sm">
+<div class="absolute inset-0 border border-outline-variant/50 m-2"></div>
+<div class="flex justify-between items-center mb-4 border-b border-outline-variant pb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SYSTEM STATUS</span>
+<span class="font-label-sm text-label-sm text-primary-container">OPTIMAL</span>
+</div>
+<div class="grid grid-cols-2 gap-4 h-full">
+<div class="border border-outline-variant/50 flex flex-col justify-end p-2 bg-surface-container/50">
+<div class="h-1/2 w-full bg-primary-container/80 border-t-2 border-primary-container"></div>
+<span class="font-label-sm text-label-sm text-text-primary mt-2 block">LOAD CAPACITY</span>
+</div>
+<div class="border border-outline-variant/50 flex flex-col justify-end p-2 bg-surface-container/50">
+<div class="h-3/4 w-full bg-outline/80 border-t-2 border-outline"></div>
+<span class="font-label-sm text-label-sm text-text-primary mt-2 block">EFFICIENCY RATIO</span>
+</div>
+</div>
+</div>
+</div>
+</section><section class="w-full bg-surface py-24 border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<div class="inline-block border-l-4 border-primary-container pl-4 mb-6">
+<h2 class="font-display-lg text-display-lg text-text-primary uppercase">SOBRE NOSOTROS</h2>
+<p class="font-headline-sm text-headline-sm text-primary mt-2">Líderes en Soluciones Eléctricas Industriales</p>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+          Con más de 15 años de experiencia, ELECCON Ingeniería se especializa en el diseño, ejecución y mantenimiento de infraestructuras eléctricas de alta complejidad. Nuestro compromiso con la excelencia técnica y la seguridad nos permite ofrecer soluciones integrales que impulsan la eficiencia y confiabilidad de la industria nacional.
+        </p>
+<div class="grid grid-cols-3 gap-4 border-t border-outline-variant pt-8">
+<div>
+<div class="font-display-md text-display-md text-primary">15+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Años</div>
+</div>
+<div>
+<div class="font-display-md text-display-md text-primary">500+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Proyectos</div>
+</div>
+<div>
+<div class="font-display-md text-display-md text-primary">ISO</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">9001</div>
+</div>
+</div>
+</div>
+<div class="relative h-64 md:h-full min-h-[300px] border border-outline-variant bg-surface-container overflow-hidden">
+<div class="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-10">
+<span class="material-symbols-outlined text-[120px]">engineering</span>
+</div>
+<div class="absolute bottom-4 right-4 bg-surface/90 backdrop-blur-sm border border-outline-variant p-4">
+<div class="font-label-sm text-label-sm text-primary-container uppercase tracking-widest mb-1">Technical Excellence</div>
+<div class="h-1 w-12 bg-primary-container"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Services Grid -->
+<section class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 border-b border-outline-variant pb-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">CORE COMPETENCIES</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">Technical expertise across the full spectrum of industrial electrical engineering.</p>
+</div>
+<button class="btn-secondary mt-6 md:mt-0">ALL SERVICES</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Service Card 1 -->
+<div class="card-industrial group cursor-pointer">
+<div class="h-48 border-b border-outline-variant bg-surface relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A close-up, high-contrast image of a high-voltage transmission tower insulator assembly. The complex ceramic rings and heavy steel hardware are rendered with sharp, industrial precision. The background is a clean, flat slate grey to emphasize the technical details of the equipment. Lighting is crisp and architectural, highlighting the metallic sheens and geometric structure." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-cWCaW5BasVbx2EAV7f_wiBtqrjMevpryqM_ZaU7SPWClblpbLdb9GtYUhB71fGn8XHeebzFVnfFctsM3_yx4xLce2uk-NMu-sq8QFl-_K4gBxVOKQERroZQ34uZB9mbaYY0mrW9UpjsOjbiAp0UMNed9IW5f93tPuoYFXIbU0-d8JjTmuB3Mo462fS9meiv82a1gAm4ec-ItDUo2BOQc_B5O-MqSp5OMgKE__4G2xmDv2EHgXPeSGeamLcRo_BEYCMOT1-bfxZk')"></div>
+<div class="absolute top-0 left-0 bg-surface/90 backdrop-blur-sm text-on-surface px-3 py-1 font-label-sm text-label-sm border-r border-b border-outline-variant">SYS_01</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-primary mb-3">HIGH VOLTAGE SYSTEMS</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Design, installation, and commissioning of substations and transmission networks. Ensuring stable power distribution for heavy industrial demands.</p>
+<div class="flex items-center text-primary-container font-label-md text-label-md uppercase group-hover:underline">
+<span class="mr-2">SPECIFICATIONS</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="card-industrial group cursor-pointer">
+<div class="h-48 border-b border-outline-variant bg-surface relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A pristine, highly organized industrial control room panel. Dozens of perfectly aligned analogue dials, digital readouts, and heavy-duty physical switches fill the frame in a tight grid. The aesthetic is modern-retro industrial, featuring a strict palette of white, slate grey, and deep navy, with tiny indicator lights glowing in safety yellow. Focus is sharp on the intricate technical components." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIH-wsEp0Wqpl33qEekrNfbwbXx0jRzMnf0TqxFmAsFnMyBLg1gT9vVLSHYSV6Ch0EiWUNIcRyuRbEsiajdBZlH935E8TvasAvt8r_omIjoBqaiNjLk_1_O5kuYNySPKNdm7DtaHMSkfQ84C2WCIUr2_jTqknZH1ZuEgiPm70wKgsfU-SJwm-FYreIUH3OLUZJ_CAkB0cHC93rh7Ybt2uknQzxOff7-Mc7mWEqWgcUM_CknDY9D67QvOAIcNDR4rFzaWFQUraVbcw')"></div>
+<div class="absolute top-0 left-0 bg-surface/90 backdrop-blur-sm text-on-surface px-3 py-1 font-label-sm text-label-sm border-r border-b border-outline-variant">SYS_02</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-primary mb-3">INDUSTRIAL MAINTENANCE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Predictive and preventative maintenance protocols. Utilizing thermal imaging and advanced diagnostics to minimize downtime and prevent catastrophic failures.</p>
+<div class="flex items-center text-primary-container font-label-md text-label-md uppercase group-hover:underline">
+<span class="mr-2">SPECIFICATIONS</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="card-industrial group cursor-pointer">
+<div class="h-48 border-b border-outline-variant bg-surface relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A stark, minimalist composition of architectural blueprints overlaid with glowing data visualizations. The blueprints show intricate electrical schematics of a manufacturing plant, while the glowing overlays represent energy consumption heatmaps in shades of yellow and deep navy. The overall look is clean, analytical, and highly professional, communicating technical precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIKhiqE2m3q0kqkQiexZTmopta1zcRWYKVrX-0EleoABpgwXFj5QPrxKQMLeFFIrne2Kqy_xvcnxbRBBxPKlY29Zx-zzPe9jx9_Fnif0PUWpzcW9djiGowabiCXs2-EhTOqW3hWr19PvahF_QduhdnbV3u5D1DlegLx_FFTe8lKHTHfsqxxsnSrNL4iD-e9MtfRX3A69QPMlIDIFGLwC9vp8Fm6QmjA_KdboS6xmXZ2RK58YC0g_-2NGFPr5IRIK63sUVC9eEJm1I')"></div>
+<div class="absolute top-0 left-0 bg-surface/90 backdrop-blur-sm text-on-surface px-3 py-1 font-label-sm text-label-sm border-r border-b border-outline-variant">SYS_03</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-primary mb-3">ENERGY AUDITS &amp; OPTIMIZATION</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Comprehensive facility analysis to identify efficiency deficits. Implementation of smart-grid technologies to optimize consumption and reduce operational overhead.</p>
+<div class="flex items-center text-primary-container font-label-md text-label-md uppercase group-hover:underline">
+<span class="mr-2">SPECIFICATIONS</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats / Why Choose Us -->
+<section class="w-full bg-surface-container-high border-y border-outline-variant py-16">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-outline-variant">
+<div class="pl-0 md:pl-8 flex flex-col items-start">
+<span class="font-display-lg text-display-lg text-primary mb-2">24/7</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Emergency Support</span>
+</div>
+<div class="pl-8 flex flex-col items-start">
+<span class="font-display-lg text-display-lg text-primary mb-2">ISO</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">9001:2015 Certified</span>
+</div>
+<div class="pl-8 flex flex-col items-start">
+<span class="font-display-lg text-display-lg text-primary mb-2">0.0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Lost Time Incidents</span>
+</div>
+<div class="pl-8 flex flex-col items-start">
+<span class="font-display-lg text-display-lg text-primary mb-2">15+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Years Engineering Excellence</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface w-full mt-auto border-t border-outline-variant relative bottom-0">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-grid-base py-margin-md max-w-full mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-sm text-headline-sm font-bold text-primary mb-4">
+                    ELECCON
+                </div>
+<p class="font-body-md text-body-md text-tertiary mb-6">INDUSTRIAL SYSTEMS ENGINEERING</p>
+<div class="font-body-md text-body-md text-tertiary">
+                    © 2024 ELECCON Ingeniería. Technical Excellence.
+                </div>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-col md:flex-row justify-end gap-8 md:gap-16">
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary cursor-pointer transition-colors" href="#">Certifications</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary cursor-pointer transition-colors" href="#">Technical Specs</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary cursor-pointer transition-colors" href="#">Site Map</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary cursor-pointer transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary cursor-pointer transition-colors" href="#">Careers</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary cursor-pointer transition-colors" href="#">Client Portal</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

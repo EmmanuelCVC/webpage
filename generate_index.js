@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+const fs = require('fs');
+
+const html = fs.readFileSync('index.html', 'utf8');
+
+const svg1Match = html.match(/(<svg id="blueprint-1"[\s\S]*?<\/svg>)/);
+const svg2Match = html.match(/(<svg id="blueprint-2"[\s\S]*?<\/svg>)/);
+const svg3Match = html.match(/(<svg id="blueprint-3"[\s\S]*?<\/svg>)/);
+
+const svg1 = svg1Match ? svg1Match[1] : '';
+const svg2 = svg2Match ? svg2Match[1] : '';
+const svg3 = svg3Match ? svg3Match[1] : '';
+
+const newHtml = `<!DOCTYPE html>
 <html lang="es" style="">
 <head>
     <meta charset="utf-8"/>
@@ -133,13 +145,6 @@
         .electrical-blueprint.active-blueprint {
             @apply opacity-60 visible;
         }
-        .blueprint-line {
-            @apply transition-all duration-300 ease-in-out;
-        }
-        .blueprint-symbol {
-            @apply pointer-events-auto cursor-crosshair transition-all duration-500 origin-center;
-            transform-box: fill-box;
-        }
         
         /* Animation classes */
         .hidden-anim {
@@ -203,9 +208,9 @@
             
             <!-- SVGs as Graphic Elements -->
             <div class="absolute inset-0 z-0 hero-vectors pointer-events-none mix-blend-multiply">
-                ${svg1}
-                ${svg2}
-                ${svg3}
+                \${svg1}
+                \${svg2}
+                \${svg3}
             </div>
 
             <div class="relative z-20 max-w-container-max w-full px-margin-mobile md:px-margin-desktop py-20 flex flex-col md:flex-row items-center justify-between gap-12">
@@ -456,4 +461,7 @@
         <span class="material-symbols-outlined">expand_less</span>
     </a>
 </body>
-</html>
+</html>`;
+
+fs.writeFileSync('index.html', newHtml, 'utf8');
+console.log('Successfully rebuilt index.html');

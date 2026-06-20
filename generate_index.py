@@ -1,4 +1,23 @@
-<!DOCTYPE html>
+# -*- coding: utf-8 -*-
+import re
+
+def main():
+    # 1. Read existing index.html
+    with open('index.html', 'r', encoding='utf-8') as f:
+        html = f.read()
+    
+    # 2. Extract the three SVGs
+    # Using regex to find <svg id="blueprint-1" ... </svg>
+    svg1_match = re.search(r'(<svg id="blueprint-1".*?</svg>)', html, re.DOTALL)
+    svg2_match = re.search(r'(<svg id="blueprint-2".*?</svg>)', html, re.DOTALL)
+    svg3_match = re.search(r'(<svg id="blueprint-3".*?</svg>)', html, re.DOTALL)
+    
+    svg1 = svg1_match.group(1) if svg1_match else ""
+    svg2 = svg2_match.group(1) if svg2_match else ""
+    svg3 = svg3_match.group(1) if svg3_match else ""
+
+    # 3. Define the new template
+    new_html = f"""<!DOCTYPE html>
 <html lang="es" style="">
 <head>
     <meta charset="utf-8"/>
@@ -18,11 +37,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet"/>
     <script id="tailwind-config">
-      tailwind.config = {
+      tailwind.config = {{
         darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
+        theme: {{
+          extend: {{
+            "colors": {{
               "background": "#F8FAFC",
               "surface": "#FFFFFF",
               "surface-container-lowest": "#FFFFFF",
@@ -42,14 +61,14 @@
               "outline-variant": "#CBD5E1",
               "outline": "#94A3B8",
               "tertiary": "#0369A1"
-            },
-            "borderRadius": {
+            }},
+            "borderRadius": {{
               "DEFAULT": "0.25rem",
               "lg": "0.5rem",
               "xl": "0.75rem",
               "full": "9999px"
-            },
-            "spacing": {
+            }},
+            "spacing": {{
               "margin-md": "16px",
               "stroke-thin": "1px",
               "gutter": "24px",
@@ -60,8 +79,8 @@
               "margin-desktop": "64px",
               "container-max": "1280px",
               "margin-mobile": "20px"
-            },
-            "fontFamily": {
+            }},
+            "fontFamily": {{
               "display-lg": ["Rajdhani"],
               "body-md": ["Montserrat"],
               "label-md": ["Rajdhani"],
@@ -71,91 +90,84 @@
               "display-md": ["Rajdhani"],
               "headline-md": ["Rajdhani"],
               "headline-lg": ["Rajdhani"]
-            },
-            "fontSize": {
-              "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700" }],
-              "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
-              "label-md": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
-              "label-sm": ["10px", { "lineHeight": "1.0", "fontWeight": "500" }],
-              "headline-sm": ["20px", { "lineHeight": "1.2", "fontWeight": "600" }],
-              "body-lg": ["16px", { "lineHeight": "1.5", "fontWeight": "500" }],
-              "display-md": ["32px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600" }],
-              "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
-              "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }]
-            }
-          }
-        }
-      }
+            }},
+            "fontSize": {{
+              "display-lg": ["48px", {{ "lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700" }}],
+              "body-md": ["14px", {{ "lineHeight": "1.5", "fontWeight": "400" }}],
+              "label-md": ["12px", {{ "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }}],
+              "label-sm": ["10px", {{ "lineHeight": "1.0", "fontWeight": "500" }}],
+              "headline-sm": ["20px", {{ "lineHeight": "1.2", "fontWeight": "600" }}],
+              "body-lg": ["16px", {{ "lineHeight": "1.5", "fontWeight": "500" }}],
+              "display-md": ["32px", {{ "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600" }}],
+              "headline-md": ["24px", {{ "lineHeight": "1.3", "fontWeight": "600" }}],
+              "headline-lg": ["32px", {{ "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }}]
+            }}
+          }}
+        }}
+      }}
     </script>
     <style type="text/tailwindcss">
         @tailwind base;
         @tailwind components;
         @tailwind utilities;
 
-        .blueprint-bg {
+        .blueprint-bg {{
             background-color: theme('colors.background');
             background-image: 
                 linear-gradient(theme('colors.outline-variant') 1px, transparent 1px),
                 linear-gradient(90deg, theme('colors.outline-variant') 1px, transparent 1px);
             background-size: 40px 40px;
-        }
-        .btn-primary {
+        }}
+        .btn-primary {{
             @apply bg-primary-container text-on-primary-container font-label-md text-label-md uppercase px-6 py-3 rounded-none shadow-[4px_4px_0px_0px_#1D4ED8] hover:shadow-[2px_2px_0px_0px_#1D4ED8] hover:translate-x-[2px] hover:translate-y-[2px] transition-all border border-primary-container inline-block text-center cursor-pointer;
-        }
-        .btn-secondary {
+        }}
+        .btn-secondary {{
             @apply bg-transparent text-primary-container font-label-md text-label-md uppercase px-6 py-3 rounded-none border-2 border-primary-container hover:bg-surface-container transition-colors inline-block text-center cursor-pointer;
-        }
-        .card-industrial {
+        }}
+        .card-industrial {{
             @apply bg-surface border border-outline-variant shadow-sm hover:shadow-md transition-shadow rounded-none;
-        }
+        }}
 
         /* Hero Slider Adjustments */
-        .hero-slider-container {
+        .hero-slider-container {{
             @apply overflow-hidden relative w-full mb-6 min-h-[160px];
-        }
-        .hero-slider {
+        }}
+        .hero-slider {{
             @apply flex transition-transform duration-700 ease-in-out w-full;
-        }
-        .hero-slide {
+        }}
+        .hero-slide {{
             @apply flex-none w-full flex flex-col justify-center items-start;
-        }
-        .hero-slide h2 {
+        }}
+        .hero-slide h2 {{
             @apply font-display-lg text-display-lg text-text-primary mb-6;
-        }
-        .hero-slide p {
+        }}
+        .hero-slide p {{
             @apply font-body-lg text-body-lg text-on-surface-variant max-w-2xl border-l-4 border-primary-container pl-4;
-        }
+        }}
 
         /* Blueprint Vectors */
-        .electrical-blueprint {
+        .electrical-blueprint {{
             @apply w-full h-full text-outline opacity-0 invisible absolute top-0 left-0 transition-all duration-1000;
-        }
-        .electrical-blueprint.active-blueprint {
+        }}
+        .electrical-blueprint.active-blueprint {{
             @apply opacity-60 visible;
-        }
-        .blueprint-line {
-            @apply transition-all duration-300 ease-in-out;
-        }
-        .blueprint-symbol {
-            @apply pointer-events-auto cursor-crosshair transition-all duration-500 origin-center;
-            transform-box: fill-box;
-        }
+        }}
         
         /* Animation classes */
-        .hidden-anim {
+        .hidden-anim {{
             @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
-        }
-        .show-anim {
+        }}
+        .show-anim {{
             @apply opacity-100 translate-y-0;
-        }
+        }}
 
         /* Responsive menu */
-        #mobile-menu {
+        #mobile-menu {{
             @apply hidden flex-col absolute top-[60px] left-0 w-full bg-surface/95 backdrop-blur-md shadow-md border-b border-outline-variant z-40 transition-all duration-300;
-        }
-        #mobile-menu.active {
+        }}
+        #mobile-menu.active {{
             @apply flex;
-        }
+        }}
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col blueprint-bg">
@@ -203,9 +215,9 @@
             
             <!-- SVGs as Graphic Elements -->
             <div class="absolute inset-0 z-0 hero-vectors pointer-events-none mix-blend-multiply">
-                ${svg1}
-                ${svg2}
-                ${svg3}
+                {svg1}
+                {svg2}
+                {svg3}
             </div>
 
             <div class="relative z-20 max-w-container-max w-full px-margin-mobile md:px-margin-desktop py-20 flex flex-col md:flex-row items-center justify-between gap-12">
@@ -457,3 +469,12 @@
     </a>
 </body>
 </html>
+"""
+
+    with open('index.html', 'w', encoding='utf-8') as f:
+        f.write(new_html)
+    
+    print("Successfully rebuilt index.html")
+
+if __name__ == "__main__":
+    main()
