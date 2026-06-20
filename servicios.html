@@ -1,188 +1,358 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es" style="">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios - ELECCON Ingeniería</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@600;700&display=block"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ELECCON Ingeniería - High Voltage & Industrial Solutions</title>
+    <link rel="icon" type="image/png" href="assets/logo.svg">
+    <meta name="description" content="Portal de servicios de ingeniería eléctrica. ELECCON Ingeniería su enfoque Electricidad y Control">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ELECCON Ingeniería">
+    <meta property="og:description" content="Portal de servicios de ingeniería eléctrica.">
+    <meta property="og:image" content="assets/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.elecconingenieria.com">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "background": "#F8FAFC",
+              "surface": "#FFFFFF",
+              "surface-container-lowest": "#FFFFFF",
+              "surface-container-low": "#F8FAFC",
+              "surface-container": "#F1F5F9",
+              "surface-container-high": "#E2E8F0",
+              "surface-container-highest": "#CBD5E1",
+              "surface-variant": "#F1F5F9",
+              "on-surface": "#0F172A",
+              "on-surface-variant": "#334155",
+              "text-primary": "#020617",
+              "text-secondary": "#475569",
+              "primary": "#1D4ED8",
+              "primary-container": "#1E40AF",
+              "on-primary-container": "#FFFFFF",
+              "secondary": "#475569",
+              "outline-variant": "#CBD5E1",
+              "outline": "#94A3B8",
+              "tertiary": "#0369A1"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "margin-md": "16px",
+              "stroke-thin": "1px",
+              "gutter": "24px",
+              "margin-sm": "8px",
+              "grid-base": "60px",
+              "sub-grid": "12px",
+              "stroke-heavy": "2px",
+              "margin-desktop": "64px",
+              "container-max": "1280px",
+              "margin-mobile": "20px"
+            },
+            "fontFamily": {
+              "display-lg": ["Rajdhani"],
+              "body-md": ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+              "label-md": ["Rajdhani"],
+              "label-sm": ["Rajdhani"],
+              "headline-sm": ["Rajdhani"],
+              "body-lg": ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+              "display-md": ["Rajdhani"],
+              "headline-md": ["Rajdhani"],
+              "headline-lg": ["Rajdhani"]
+            },
+            "fontSize": {
+              "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700" }],
+              "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+              "label-md": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+              "label-sm": ["10px", { "lineHeight": "1.0", "fontWeight": "500" }],
+              "headline-sm": ["20px", { "lineHeight": "1.2", "fontWeight": "600" }],
+              "body-lg": ["16px", { "lineHeight": "1.5", "fontWeight": "500" }],
+              "display-md": ["32px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600" }],
+              "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+              "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        .blueprint-bg {
+            background-color: theme('colors.background');
+            background-image: 
+                linear-gradient(theme('colors.outline-variant') 1px, transparent 1px),
+                linear-gradient(90deg, theme('colors.outline-variant') 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .btn-primary {
+            @apply bg-primary-container text-on-primary-container font-label-md text-label-md uppercase px-6 py-3 rounded-none shadow-[4px_4px_0px_0px_#1D4ED8] hover:shadow-[2px_2px_0px_0px_#1D4ED8] hover:translate-x-[2px] hover:translate-y-[2px] transition-all border border-primary-container inline-block text-center cursor-pointer;
+        }
+        .btn-secondary {
+            @apply bg-transparent text-primary-container font-label-md text-label-md uppercase px-6 py-3 rounded-none border-2 border-primary-container hover:bg-surface-container transition-colors inline-block text-center cursor-pointer;
+        }
+        .card-industrial {
+            @apply bg-surface border border-outline-variant shadow-sm hover:shadow-md transition-shadow rounded-none;
+        }
+
+        /* Hero Slider Adjustments */
+        .hero-slider-container {
+            @apply overflow-hidden relative w-full mb-6 min-h-[160px];
+        }
+        .hero-slider {
+            @apply flex transition-transform duration-700 ease-in-out w-full;
+        }
+        .hero-slide {
+            @apply flex-none w-full flex flex-col justify-center items-start;
+        }
+        .hero-slide h2 {
+            @apply font-display-lg text-display-lg text-text-primary mb-6;
+        }
+        .hero-slide p {
+            @apply font-body-lg text-body-lg text-on-surface-variant max-w-2xl border-l-4 border-primary-container pl-4;
+        }
+
+        /* Blueprint Vectors */
+        .electrical-blueprint {
+            @apply w-full h-full text-outline opacity-0 invisible absolute top-0 left-0 transition-all duration-1000;
+        }
+        .electrical-blueprint.active-blueprint {
+            @apply opacity-60 visible;
+        }
+        .blueprint-line {
+            @apply transition-all duration-300 ease-in-out;
+        }
+        .blueprint-symbol {
+            @apply pointer-events-auto cursor-crosshair transition-all duration-500 origin-center;
+            transform-box: fill-box;
+        }
+        
+        /* Animation classes */
+        .hidden-anim {
+            @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+        }
+        .show-anim {
+            @apply opacity-100 translate-y-0;
+        }
+
+        /* Responsive menu */
+        #mobile-menu {
+            @apply hidden flex-col absolute top-[60px] left-0 w-full bg-surface/95 backdrop-blur-md shadow-md border-b border-outline-variant z-40 transition-all duration-300;
+        }
+        #mobile-menu.active {
+            @apply flex;
+        }
+    </style>
 </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col blueprint-bg">
 
-<body>
-    <header id="main-header">
-        <div class="container">
-            <div class="logo-container">
-                <a href="index.html" style="display: block; line-height: 0;">
-                    <img src="assets/logo.svg" alt="ELECCON Logo" class="logo-img"
-                        onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><rect width=\'40\' height=\'40\' fill=\'%23004e92\'/><text x=\'20\' y=\'25\' font-family=\'Arial\' font-size=\'20\' fill=\'white\' text-anchor=\'middle\'>E</text></svg>'">
+    <!-- TopNavBar -->
+    <nav class="bg-surface/90 backdrop-blur-md w-full top-0 fixed border-b border-outline-variant z-50 shadow-sm" id="main-header">
+        <div class="flex justify-between items-center w-full px-grid-base h-[60px] max-w-full mx-auto">
+            <div class="flex items-center gap-3 h-full">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/logo.svg" alt="ELECCON Logo" class="h-8 w-auto">
+                    <span class="font-headline-md text-[22px] text-primary font-bold tracking-widest uppercase">ELECCON<span class="text-on-surface-variant font-medium"> Ingeniería</span></span>
                 </a>
-                <h1 class="brand-name"><div class="brand-text-wrapper"><span class="brand-eleccon">ELECCON </span><span class="brand-ingenieria">Ingeniería</span></div></h1>
             </div>
-            <button class="mobile-menu-btn" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav>
-                <ul>
-                    <li><a href="index.html#hero">Inicio</a></li>
-                    <li><a href="servicios.html" class="active">Servicios</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <!-- <li><a href="blog.html">Blog</a></li> -->
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a class="text-on-surface-variant font-medium hover:text-primary font-label-md text-[15px] uppercase cursor-pointer hover:opacity-80 transition-all duration-200" href="#hero">Inicio</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary font-label-md text-[15px] uppercase cursor-pointer hover:opacity-80 transition-all duration-200" href="servicios.html">Servicios</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary font-label-md text-[15px] uppercase cursor-pointer hover:opacity-80 transition-all duration-200" href="nosotros.html">Nosotros</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary font-label-md text-[15px] uppercase cursor-pointer hover:opacity-80 transition-all duration-200" href="contacto.html">Contacto</a>
+            </div>
+            <div class="hidden md:block">
+                <a href="contacto.html" class="btn-primary" style="padding: 10px 20px; font-size: 15px;">SOLICITAR COTIZACIÓN</a>
+            </div>
+            <div class="md:hidden">
+                <button class="mobile-menu-btn text-primary">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
         </div>
-    </header>
+        <!-- Mobile Menu items -->
+        <ul id="mobile-menu" class="hidden md:hidden">
+            <li><a class="block py-4 text-center border-b border-outline-variant text-on-surface-variant font-label-md uppercase hover:bg-surface-container" href="#hero">Inicio</a></li>
+            <li><a class="block py-4 text-center border-b border-outline-variant text-on-surface-variant font-label-md uppercase hover:bg-surface-container" href="servicios.html">Servicios</a></li>
+            <li><a class="block py-4 text-center border-b border-outline-variant text-on-surface-variant font-label-md uppercase hover:bg-surface-container" href="nosotros.html">Nosotros</a></li>
+            <li><a class="block py-4 text-center text-on-surface-variant font-label-md uppercase hover:bg-surface-container" href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
 
-    <main>
-        <section class="service-hero" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); padding: 100px 0 40px; color: white; text-align: center;">
-            <div class="container">
-                <h1 class="hero-title" style="color: white; font-family: var(--font-heading); font-size: 3rem; margin-bottom: 10px;">Nuestros Servicios</h1>
-                <p class="section-subtitle"
-                    style="opacity: 0.9; color: white; max-width: 600px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
-                    Ofrecemos soluciones integrales en ingeniería eléctrica para satisfacer todas tus necesidades con
-                    calidad, seguridad y profesionalismo.</p>
-            </div>
-        </section>
-
-        <section id="services" style="padding: 60px 0; background: #f9f9f9;">
-            <div class="container">
-                <div class="services-grid">
-                    <div class="service-card hidden-anim">
-                        <span class="material-symbols-outlined service-icon">architecture</span>
-                        <h3>Elaboración de planos eléctricos</h3>
-                        <p>Diseño y confección de planos debidamente sellados por el CFIA.</p>
-                        <a href="detalle-servicio.html?id=planos" class="service-btn">Ver Detalles</a>
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center w-full mt-[60px]">
+        <section class="relative pt-24 pb-32 px-margin-mobile md:px-margin-desktop overflow-hidden border-b border-outline-variant bg-surface-container">
+<div class="absolute inset-0 blueprint-bg opacity-50"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="max-w-3xl">
+<div class="inline-block bg-white px-3 py-1 border border-outline-variant font-label-sm text-label-sm text-on-surface-variant uppercase mb-6 tracking-widest  font-bold">
+                        SYS-OP-34 // ENGINEERING CAPABILITIES
                     </div>
-
-                    <div class="service-card hidden-anim">
-                        <span class="material-symbols-outlined service-icon">receipt_long</span>
-                        <h3>Boletas eléctricas</h3>
-                        <p>Trámite de boletas eléctricas debidamente selladas por el CFIA.</p>
-                        <a href="detalle-servicio.html?id=boletas" class="service-btn">Ver Detalles</a>
-                    </div>
-
-                    <div class="service-card hidden-anim">
-                        <span class="material-symbols-outlined service-icon">electric_meter</span>
-                        <h3>Solicitud de nuevo medidor</h3>
-                        <p>Gestión y solicitud de nuevos medidores u otros trámites afines.</p>
-                        <a href="detalle-servicio.html?id=medidor" class="service-btn">Ver Detalles</a>
-                    </div>
-
-                    <div class="service-card hidden-anim">
-                        <span class="material-symbols-outlined service-icon">electric_bolt</span>
-                        <h3>Balanceo de carga</h3>
-                        <p>Distribución equitativa de cargas en sistemas trifásicos y monofásicos.</p>
-                        <a href="detalle-servicio.html?id=balanceo" class="service-btn">Ver Detalles</a>
-                    </div>
-
-                    <div class="service-card hidden-anim">
-                        <span class="material-symbols-outlined service-icon">troubleshoot</span>
-                        <h3>Estudio eléctrico</h3>
-                        <p>Análisis y diagnóstico profundo de su sistema e infraestructura eléctrica.</p>
-                        <a href="detalle-servicio.html?id=estudio" class="service-btn">Ver Detalles</a>
-                    </div>
-
-                    <div class="service-card hidden-anim">
-                        <span class="material-symbols-outlined service-icon">electrical_services</span>
-                        <h3>Instalaciones eléctricas</h3>
-                        <p>Diseño y ejecución de proyectos eléctricos para diversos sectores.</p>
-                        <a href="detalle-servicio.html?id=instalaciones" class="service-btn">Ver Detalles</a>
-                    </div>
-
-                    <div class="service-card hidden-anim">
-                        <span class="material-symbols-outlined service-icon">home_work</span>
-                        <h3>Permisos municipales</h3>
-                        <p>Trámites para instalaciones eléctricas según la nueva ley vigente.</p>
-                        <a href="detalle-servicio.html?id=permisos-municipales" class="service-btn">Ver Detalles</a>
-                    </div>
-
-                    <div class="service-card hidden-anim">
-                        <span class="material-symbols-outlined service-icon">verified</span>
-                        <h3>Certificación eléctrica</h3>
-                        <p>Certificación para permisos requeridos por el Ministerio de Salud.</p>
-                        <a href="detalle-servicio.html?id=certificacion-salud" class="service-btn">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="container" style="text-align: right; padding-bottom: 20px;">
-            <p style="font-size: 0.9rem; color: #777;"><em>Última fecha de actualización: 26 de mayo de 2026</em></p>
-        </div>
+<h1 class="font-display-lg text-display-lg  text-primary mb-6 uppercase tracking-tight">
+                        NUESTROS SERVICIOS
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl border-l-4 border-secondary-container pl-6 py-2">
+                        Industrial-grade electrical engineering excellence. We design, deploy, and maintain robust infrastructure for high-stakes environments, ensuring absolute precision and unwavering reliability.
+                    </p>
+</div>
+</div>
+<!-- Abstract Graphic Element -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full hidden lg:block opacity-10">
+<svg class="w-full h-full text-primary" fill="none" stroke="currentColor" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200" cy="200" r="180" stroke-dasharray="4 4" stroke-width="1"></circle>
+<circle cx="200" cy="200" r="120" stroke-width="2"></circle>
+<line stroke-width="1" x1="20" x2="380" y1="200" y2="200"></line>
+<line stroke-width="1" x1="200" x2="200" y1="20" y2="380"></line>
+</svg>
+</div>
+</section>
+        <section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Service 1 -->
+<div class="bg-surface border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col group relative overflow-hidden">
+<div class="h-64 bg-surface-container relative border-b border-outline-variant">
+<div class="bg-cover bg-center w-full h-full opacity-90 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A high-angle, detailed photograph of a large-scale industrial electrical substation during the day. The scene is dominated by massive steel structures, heavy-duty transformers, and complex networks of high-voltage transmission lines. The lighting is bright and even, highlighting the technical complexity and precision of the engineering. The color palette is industrial, featuring metallic greys, crisp white insulators, and a clear blue sky background. The mood is powerful and structured, reflecting corporate professionalism and technical rigor." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCF3dqopM71zcD8uyZrAogaBhY-omsVXYxML7xL87ct-vMsP2XjNNPhXwxtg97SOmSfg33ZQ658lyCNtn3-MeJahUrgaF4sMTSvTz_CEllLEx7c5azd5pVYJgoCBH3Xnyav7tizeM1DVARr-LqXwPNWoD4h8NilFXPX0eIRN6OtynLRXu_pD0lzsR8u03URMDFzfBXTUUql5zIfpPIDSpgj7NDSY8UAQzfFo1IDKWmnJi3OxyMqotnrRGd4_gCK9EUyQ1hpGMhXVOo')"></div>
+<div class="absolute top-4 left-4 bg-white px-2 py-1 border border-outline-variant font-label-sm text-label-sm  font-bold">S-01</div>
+</div>
+<div class="p-8 flex-grow">
+<h3 class="font-headline-md text-headline-md  text-primary mb-4 uppercase">Sistemas de Alta Tensión</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Engineering and deployment of robust substations and high-capacity transmission networks designed for maximum load stability and minimal transmission loss in heavy industrial sectors.
+                            </p>
+<ul class="space-y-2 font-label-md text-label-md text-on-surface-variant mb-8 border-t border-outline-variant pt-4">
+<li class="flex items-center"><span class="material-symbols-outlined text-primary-container mr-2 text-sm">bolt</span> Substation Design &amp; Build</li>
+<li class="flex items-center"><span class="material-symbols-outlined text-primary-container mr-2 text-sm">bolt</span> Transmission Line Routing</li>
+<li class="flex items-center"><span class="material-symbols-outlined text-primary-container mr-2 text-sm">bolt</span> Grid Integration Protocol</li>
+</ul>
+<div class="mt-auto">
+<button class="font-label-md text-label-md text-primary font-bold uppercase tracking-widest flex items-center hover:text-primary-container transition-colors ">
+                                    View Specs <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="bg-surface border border-outline-variant shadow-sm hover:shadow-md transition-shadow flex flex-col group relative overflow-hidden">
+<div class="h-64 bg-surface-container relative border-b border-outline-variant">
+<div class="bg-cover bg-center w-full h-full opacity-90 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A close-up, high-contrast photograph of an engineer holding a thermal imaging camera inspecting a complex industrial control panel. The screen of the camera glows with bright thermal data, contrasting sharply with the dark, metallic greys and slate colors of the surrounding machinery. The lighting emphasizes the precise, technical nature of the work, with sharp shadows and crisp highlights. The mood is analytical and highly professional, fitting a modern industrial aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3SRf8IZeZQjC3rsHHSi_VefXR7Qy77q4ne1_nRm3MZpStpBkgtH4K3PcDZ-NbQ_P0b_j-CDpNDNAN8XryHTzlUEXQ0qsoUtkE-4Kb-HYR5Hhqh7DkGv5qxbOC9CmePTbxp5uDo9X-b7UEKad3ixUlRggbrVmbJPW-f8hxpWeAFCT3k0paykJr3z47vS9ytj9mLBy23slUG3CVKlee0LDqB94J6OpUEN_1ei_FBIzCbj9Lw8cPwSvtBww5vzvMS-K1ntfVz2vtp20')"></div>
+<div class="absolute top-4 left-4 bg-white px-2 py-1 border border-outline-variant font-label-sm text-label-sm  font-bold">S-02</div>
+</div>
+<div class="p-8 flex-grow">
+<h3 class="font-headline-md text-headline-md  text-primary mb-4 uppercase">Mantenimiento Industrial</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Advanced predictive and preventative maintenance protocols utilizing thermal imaging and vibration analysis to eliminate unplanned downtime and extend equipment lifecycle.
+                            </p>
+<ul class="space-y-2 font-label-md text-label-md text-on-surface-variant mb-8 border-t border-outline-variant pt-4">
+<li class="flex items-center"><span class="material-symbols-outlined text-primary-container mr-2 text-sm">thermostat</span> Thermal Imaging Diagnostics</li>
+<li class="flex items-center"><span class="material-symbols-outlined text-primary-container mr-2 text-sm">monitor_heart</span> Predictive Failure Analysis</li>
+<li class="flex items-center"><span class="material-symbols-outlined text-primary-container mr-2 text-sm">build</span> Preventative Overhauls</li>
+</ul>
+<div class="mt-auto">
+<button class="font-label-md text-label-md text-primary font-bold uppercase tracking-widest flex items-center hover:text-primary-container transition-colors ">
+                                    View Specs <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+        <section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container border-y border-outline-variant relative">
+<div class="absolute inset-0 blueprint-bg opacity-30"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg md:font-headline-lg-mobile text-headline-lg  text-primary uppercase">Metodología Operativa</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Standardized execution protocols for guaranteed precision.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<!-- Connecting Line -->
+<div class="hidden md:block absolute top-12 left-1/6 right-1/6 h-px bg-outline-variant -z-10"></div>
+<!-- Step 1 -->
+<div class="bg-white p-8 border border-outline-variant shadow-sm hover:shadow-md transition-shadow relative">
+<div class="w-12 h-12 bg-primary text-white flex items-center justify-center font-label-md text-label-md font-bold mb-6 mx-auto ">
+                            01
+                        </div>
+<h4 class="font-headline-md text-headline-md  text-center text-primary mb-4 uppercase">Consultation &amp; Audit</h4>
+<p class="font-body-md text-body-md text-center text-on-surface-variant">
+                            Rigorous site analysis and load requirement calculation to establish the baseline parameters for engineering design.
+                        </p>
+</div>
+<!-- Step 2 -->
+<div class="bg-white p-8 border border-outline-variant shadow-sm hover:shadow-md transition-shadow relative">
+<div class="w-12 h-12 bg-primary text-white flex items-center justify-center font-label-md text-label-md font-bold mb-6 mx-auto ">
+                            02
+                        </div>
+<h4 class="font-headline-md text-headline-md  text-center text-primary mb-4 uppercase">Schematic Design</h4>
+<p class="font-body-md text-body-md text-center text-on-surface-variant">
+                            Development of comprehensive blueprints, component specification, and safety protocol integration.
+                        </p>
+</div>
+<!-- Step 3 -->
+<div class="bg-white p-8 border border-outline-variant shadow-sm hover:shadow-md transition-shadow relative">
+<div class="w-12 h-12 bg-primary text-white flex items-center justify-center font-label-md text-label-md font-bold mb-6 mx-auto ">
+                            03
+                        </div>
+<h4 class="font-headline-md text-headline-md  text-center text-primary mb-4 uppercase">Execution &amp; Testing</h4>
+<p class="font-body-md text-body-md text-center text-on-surface-variant">
+                            Precision installation followed by multi-phase load testing and grid synchronization before final handover.
+                        </p>
+</div>
+</div>
+</div>
+</section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-info">
-                <div class="footer-item">
-                    <h4 style="display: flex; align-items: center; justify-content: center; gap: 8px;"><svg
-                            style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                        </svg> Enlaces de Interés</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
-                        <li><a href="de-interes.html">Documentos de Interés</a></li>
-
-                        <li><a href="#">Políticas de Privacidad</a></li>
-                    </ul>
+    <!-- Footer -->
+    <footer class="bg-surface w-full mt-auto border-t border-outline-variant relative bottom-0">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-grid-base py-margin-md max-w-full mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <div class="font-headline-sm text-headline-sm font-bold text-black mb-4 flex items-center gap-2">
+                    <img src="assets/logo.svg" alt="ELECCON" class="h-6 w-auto grayscale opacity-80">
+                    ELECCON
                 </div>
-                <div class="footer-item">
-                    <h4 style="display: flex; align-items: center; justify-content: center; gap: 8px;"><svg
-                            style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg> Ubicación</h4>
-                    <p>Upala, Upala, Alajuela, Costa Rica<br>Oficinas Centrales (próximamente)</p>
-                </div>
-                <div class="footer-item">
-                    <h4 style="display: flex; align-items: center; justify-content: center; gap: 8px;"><svg
-                            style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                            </path>
-                        </svg> Teléfono</h4>
-                    <p><a href="tel:+50670593018">+506 7059-3018</a></p> <!-- Reemplaza con tu número -->
-                </div>
-                <div class="footer-item">
-                    <h4 style="display: flex; align-items: center; justify-content: center; gap: 8px;"><svg
-                            style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                            </path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg> Correo</h4>
-                    <p><a href="mailto:info@elecconingenieria.com">info@elecconingenieria.com</a></p>
-                    <!-- Reemplaza con tu correo -->
+                <div class="font-body-md text-body-md text-on-surface-variant">
+                    © 2026 ELECCON Ingeniería.<br>Todos los derechos reservados.
                 </div>
             </div>
-            <div class="footer-copyright">
-                <p>&copy; 2026 ELECCON - Ingeniería. Todos los derechos reservados.</p>
+            <div class="col-span-1 md:col-span-3 flex flex-col md:flex-row justify-end gap-8 md:gap-16">
+                <div class="flex flex-col gap-4">
+                    <div class="font-label-md text-primary-container tracking-widest uppercase mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm">link</span> Enlaces de Interés</div>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary cursor-pointer transition-colors no-underline" href="de-interes.html">Documentos de Interés</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary cursor-pointer transition-colors no-underline" href="#">Políticas de Privacidad</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="font-label-md text-primary-container tracking-widest uppercase mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Ubicación</div>
+                    <span class="font-body-md text-body-md text-on-surface-variant">Upala, Upala, Alajuela<br>Costa Rica<br>Oficinas Centrales (próximamente)</span>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="font-label-md text-primary-container tracking-widest uppercase mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-sm">contact_support</span> Contacto</div>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary cursor-pointer transition-colors no-underline" href="tel:+50670593018">+506 7059-3018</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary cursor-pointer transition-colors no-underline" href="mailto:info@elecconingenieria.com">info@elecconingenieria.com</a>
+                </div>
             </div>
         </div>
     </footer>
-    <!-- Scroll to Top Button -->
-    <a href="#" class="scroll-top-btn" aria-label="Subir al inicio">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
-    </a>
+
     <script src="script.js"></script>
+    
+    <!-- Scroll to Top Button -->
+    <a href="#" class="scroll-top-btn hidden fixed bottom-6 right-6 bg-primary-container text-on-primary-container p-3 rounded-full shadow-md hover:bg-primary transition-all z-50">
+        <span class="material-symbols-outlined">expand_less</span>
+    </a>
 </body>
-
 </html>
-
-

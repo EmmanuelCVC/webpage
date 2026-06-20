@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Servicios - ELECCON Ingeniería</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Rajdhani:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#75777d",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary-container": "#ffa515",
+                        "primary-fixed": "#d7e2ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#afc9ea",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#bbc6e2",
+                        "surface-container-low": "#f4f3f3",
+                        "on-primary-fixed": "#101b30",
+                        "primary": "#051125",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#768fae",
+                        "inverse-primary": "#bbc6e2",
+                        "surface-variant": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#001224",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#001d36",
+                        "background": "#f9f9f9",
+                        "on-secondary-container": "#684000",
+                        "surface-bright": "#f9f9f9",
+                        "secondary-fixed": "#ffddb8",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-surface-variant": "#45474d",
+                        "surface-tint": "#545e76",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-container": "#0a2742",
+                        "surface-container": "#eeeeee",
+                        "outline-variant": "#c5c6cd",
+                        "on-background": "#1a1c1c",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "on-primary-container": "#828da7",
+                        "surface": "#f9f9f9",
+                        "secondary": "#855300",
+                        "on-tertiary-fixed-variant": "#2f4865",
+                        "on-primary-fixed-variant": "#3c475d",
+                        "primary-container": "#1b263b",
+                        "tertiary-fixed": "#d1e4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter", "sans-serif"],
+                        "label-sm": ["JetBrains Mono", "monospace"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "headline-md": ["Inter", "sans-serif"],
+                        "label-md": ["JetBrains Mono", "monospace"],
+                        "headline-lg-mobile": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .blueprint-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, #D1D5DB 1px, transparent 1px), linear-gradient(to bottom, #D1D5DB 1px, transparent 1px);
+        }
+        .btn-safety {
+            background-color: #FCA311;
+            color: #1B263B;
+            box-shadow: 4px 4px 0px 0px rgba(27, 38, 59, 1);
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .btn-safety:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px rgba(27, 38, 59, 1);
+        }
+        .card-border { border: 1px solid #D1D5DB; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface w-full top-0 sticky border-b border-outline-variant z-50">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary font-rajdhani">
+                VOLT-TECH ENGINEERING
+            </div>
+<ul class="hidden md:flex space-x-8">
+<li class="cursor-pointer active:opacity-80 hover:bg-surface-container-high transition-colors duration-200 text-secondary font-bold border-b-2 border-secondary pb-1">SERVICES</li>
+<li class="cursor-pointer active:opacity-80 hover:bg-surface-container-high transition-colors duration-200 text-on-surface-variant font-medium hover:text-primary">PORTFOLIO</li>
+<li class="cursor-pointer active:opacity-80 hover:bg-surface-container-high transition-colors duration-200 text-on-surface-variant font-medium hover:text-primary">SAFETY</li>
+<li class="cursor-pointer active:opacity-80 hover:bg-surface-container-high transition-colors duration-200 text-on-surface-variant font-medium hover:text-primary">ABOUT</li>
+<li class="cursor-pointer active:opacity-80 hover:bg-surface-container-high transition-colors duration-200 text-on-surface-variant font-medium hover:text-primary">CONTACT</li>
+</ul>
+<button class="hidden md:block btn-safety px-6 py-2 font-label-md text-label-md font-bold uppercase rounded-none border border-primary-container font-rajdhani">
+                REQUEST QUOTE
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+</nav>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative pt-24 pb-32 px-margin-mobile md:px-margin-desktop overflow-hidden border-b border-outline-variant bg-[#E5E5E5]">
+<div class="absolute inset-0 blueprint-grid opacity-50"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="max-w-3xl">
+<div class="inline-block bg-white px-3 py-1 border border-outline-variant font-label-sm text-label-sm text-on-surface-variant uppercase mb-6 tracking-widest font-rajdhani font-bold">
+                        SYS-OP-34 // ENGINEERING CAPABILITIES
+                    </div>
+<h1 class="font-display-lg text-display-lg font-rajdhani text-primary mb-6 uppercase tracking-tight">
+                        NUESTROS SERVICIOS
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl border-l-4 border-secondary-container pl-6 py-2">
+                        Industrial-grade electrical engineering excellence. We design, deploy, and maintain robust infrastructure for high-stakes environments, ensuring absolute precision and unwavering reliability.
+                    </p>
+</div>
+</div>
+<!-- Abstract Graphic Element -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full hidden lg:block opacity-10">
+<svg class="w-full h-full text-primary" fill="none" stroke="currentColor" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200" cy="200" r="180" stroke-dasharray="4 4" stroke-width="1"></circle>
+<circle cx="200" cy="200" r="120" stroke-width="2"></circle>
+<line stroke-width="1" x1="20" x2="380" y1="200" y2="200"></line>
+<line stroke-width="1" x1="200" x2="200" y1="20" y2="380"></line>
+</svg>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Service 1 -->
+<div class="bg-surface-container-lowest card-border flex flex-col group relative overflow-hidden">
+<div class="h-64 bg-surface-dim relative border-b border-outline-variant">
+<div class="bg-cover bg-center w-full h-full opacity-90 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A high-angle, detailed photograph of a large-scale industrial electrical substation during the day. The scene is dominated by massive steel structures, heavy-duty transformers, and complex networks of high-voltage transmission lines. The lighting is bright and even, highlighting the technical complexity and precision of the engineering. The color palette is industrial, featuring metallic greys, crisp white insulators, and a clear blue sky background. The mood is powerful and structured, reflecting corporate professionalism and technical rigor." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCF3dqopM71zcD8uyZrAogaBhY-omsVXYxML7xL87ct-vMsP2XjNNPhXwxtg97SOmSfg33ZQ658lyCNtn3-MeJahUrgaF4sMTSvTz_CEllLEx7c5azd5pVYJgoCBH3Xnyav7tizeM1DVARr-LqXwPNWoD4h8NilFXPX0eIRN6OtynLRXu_pD0lzsR8u03URMDFzfBXTUUql5zIfpPIDSpgj7NDSY8UAQzfFo1IDKWmnJi3OxyMqotnrRGd4_gCK9EUyQ1hpGMhXVOo')"></div>
+<div class="absolute top-4 left-4 bg-white px-2 py-1 border border-outline-variant font-label-sm text-label-sm font-rajdhani font-bold">S-01</div>
+</div>
+<div class="p-8 flex-grow">
+<h3 class="font-headline-md text-headline-md font-rajdhani text-primary mb-4 uppercase">Sistemas de Alta Tensión</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Engineering and deployment of robust substations and high-capacity transmission networks designed for maximum load stability and minimal transmission loss in heavy industrial sectors.
+                            </p>
+<ul class="space-y-2 font-label-md text-label-md text-on-surface-variant mb-8 border-t border-outline-variant pt-4">
+<li class="flex items-center"><span class="material-symbols-outlined text-secondary-container mr-2 text-sm">bolt</span> Substation Design &amp; Build</li>
+<li class="flex items-center"><span class="material-symbols-outlined text-secondary-container mr-2 text-sm">bolt</span> Transmission Line Routing</li>
+<li class="flex items-center"><span class="material-symbols-outlined text-secondary-container mr-2 text-sm">bolt</span> Grid Integration Protocol</li>
+</ul>
+<div class="mt-auto">
+<button class="font-label-md text-label-md text-primary font-bold uppercase tracking-widest flex items-center hover:text-secondary-container transition-colors font-rajdhani">
+                                    View Specs <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="bg-surface-container-lowest card-border flex flex-col group relative overflow-hidden">
+<div class="h-64 bg-surface-dim relative border-b border-outline-variant">
+<div class="bg-cover bg-center w-full h-full opacity-90 grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A close-up, high-contrast photograph of an engineer holding a thermal imaging camera inspecting a complex industrial control panel. The screen of the camera glows with bright thermal data, contrasting sharply with the dark, metallic greys and slate colors of the surrounding machinery. The lighting emphasizes the precise, technical nature of the work, with sharp shadows and crisp highlights. The mood is analytical and highly professional, fitting a modern industrial aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3SRf8IZeZQjC3rsHHSi_VefXR7Qy77q4ne1_nRm3MZpStpBkgtH4K3PcDZ-NbQ_P0b_j-CDpNDNAN8XryHTzlUEXQ0qsoUtkE-4Kb-HYR5Hhqh7DkGv5qxbOC9CmePTbxp5uDo9X-b7UEKad3ixUlRggbrVmbJPW-f8hxpWeAFCT3k0paykJr3z47vS9ytj9mLBy23slUG3CVKlee0LDqB94J6OpUEN_1ei_FBIzCbj9Lw8cPwSvtBww5vzvMS-K1ntfVz2vtp20')"></div>
+<div class="absolute top-4 left-4 bg-white px-2 py-1 border border-outline-variant font-label-sm text-label-sm font-rajdhani font-bold">S-02</div>
+</div>
+<div class="p-8 flex-grow">
+<h3 class="font-headline-md text-headline-md font-rajdhani text-primary mb-4 uppercase">Mantenimiento Industrial</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Advanced predictive and preventative maintenance protocols utilizing thermal imaging and vibration analysis to eliminate unplanned downtime and extend equipment lifecycle.
+                            </p>
+<ul class="space-y-2 font-label-md text-label-md text-on-surface-variant mb-8 border-t border-outline-variant pt-4">
+<li class="flex items-center"><span class="material-symbols-outlined text-secondary-container mr-2 text-sm">thermostat</span> Thermal Imaging Diagnostics</li>
+<li class="flex items-center"><span class="material-symbols-outlined text-secondary-container mr-2 text-sm">monitor_heart</span> Predictive Failure Analysis</li>
+<li class="flex items-center"><span class="material-symbols-outlined text-secondary-container mr-2 text-sm">build</span> Preventative Overhauls</li>
+</ul>
+<div class="mt-auto">
+<button class="font-label-md text-label-md text-primary font-bold uppercase tracking-widest flex items-center hover:text-secondary-container transition-colors font-rajdhani">
+                                    View Specs <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-[#E5E5E5] border-y border-outline-variant relative">
+<div class="absolute inset-0 blueprint-grid opacity-30"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg md:font-headline-lg-mobile text-headline-lg font-rajdhani text-primary uppercase">Metodología Operativa</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Standardized execution protocols for guaranteed precision.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<!-- Connecting Line -->
+<div class="hidden md:block absolute top-12 left-1/6 right-1/6 h-px bg-outline-variant -z-10"></div>
+<!-- Step 1 -->
+<div class="bg-white p-8 card-border relative">
+<div class="w-12 h-12 bg-primary text-white flex items-center justify-center font-label-md text-label-md font-bold mb-6 mx-auto font-rajdhani">
+                            01
+                        </div>
+<h4 class="font-headline-md text-headline-md font-rajdhani text-center text-primary mb-4 uppercase">Consultation &amp; Audit</h4>
+<p class="font-body-md text-body-md text-center text-on-surface-variant">
+                            Rigorous site analysis and load requirement calculation to establish the baseline parameters for engineering design.
+                        </p>
+</div>
+<!-- Step 2 -->
+<div class="bg-white p-8 card-border relative">
+<div class="w-12 h-12 bg-primary text-white flex items-center justify-center font-label-md text-label-md font-bold mb-6 mx-auto font-rajdhani">
+                            02
+                        </div>
+<h4 class="font-headline-md text-headline-md font-rajdhani text-center text-primary mb-4 uppercase">Schematic Design</h4>
+<p class="font-body-md text-body-md text-center text-on-surface-variant">
+                            Development of comprehensive blueprints, component specification, and safety protocol integration.
+                        </p>
+</div>
+<!-- Step 3 -->
+<div class="bg-white p-8 card-border relative">
+<div class="w-12 h-12 bg-primary text-white flex items-center justify-center font-label-md text-label-md font-bold mb-6 mx-auto font-rajdhani">
+                            03
+                        </div>
+<h4 class="font-headline-md text-headline-md font-rajdhani text-center text-primary mb-4 uppercase">Execution &amp; Testing</h4>
+<p class="font-body-md text-body-md text-center text-on-surface-variant">
+                            Precision installation followed by multi-phase load testing and grid synchronization before final handover.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary w-full mt-auto border-t border-outline">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-2">
+<div class="font-headline-md text-headline-md text-on-primary mb-4 font-rajdhani">
+                    VOLT-TECH ENGINEERING
+                </div>
+<div class="font-label-sm text-label-sm text-on-primary-container mb-6 max-w-sm font-mono font-rajdhani">
+                    INDUSTRIAL POWER SYSTEMS<br/>
+                    PRECISION ENGINEERING<br/>
+                    HQ: MADRID, ESPAÑA
+                </div>
+<div class="font-body-md text-body-md text-on-primary-container">
+                    © 2024 VOLT-TECH INDUSTRIAL SYSTEMS. ALL RIGHTS RESERVED.
+                </div>
+</div>
+<div class="col-span-1">
+<h5 class="font-label-md text-label-md font-bold mb-4 uppercase tracking-widest text-secondary-fixed font-rajdhani">Documentation</h5>
+<ul class="space-y-2 font-label-sm text-label-sm">
+<li class="cursor-pointer text-on-primary-container hover:text-secondary-fixed hover:underline transition-all">CERTIFICATIONS</li>
+<li class="cursor-pointer text-on-primary-container hover:text-secondary-fixed hover:underline transition-all">TECHNICAL SPECS</li>
+<li class="cursor-pointer text-on-primary-container hover:text-secondary-fixed hover:underline transition-all">SITE MAP</li>
+</ul>
+</div>
+<div class="col-span-1">
+<h5 class="font-label-md text-label-md font-bold mb-4 uppercase tracking-widest text-secondary-fixed font-rajdhani">Corporate</h5>
+<ul class="space-y-2 font-label-sm text-label-sm">
+<li class="cursor-pointer text-on-primary-container hover:text-secondary-fixed hover:underline transition-all">PRIVACY POLICY</li>
+<li class="cursor-pointer text-on-primary-container hover:text-secondary-fixed hover:underline transition-all">CAREERS</li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>
