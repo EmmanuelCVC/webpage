@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELECCON Ingeniería - Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Rajdhani:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "text-primary": "#FFFFFF",
+                "on-error-container": "#ffdad6",
+                "surface-dim": "#131313",
+                "on-surface": "#e4e2e1",
+                "on-error": "#690005",
+                "on-tertiary": "#003640",
+                "tertiary-fixed-dim": "#69d5ee",
+                "surface": "#131313",
+                "error": "#ffb4ab",
+                "tertiary-container": "#005462",
+                "surface-container-highest": "#353535",
+                "on-tertiary-container": "#5ecbe4",
+                "surface-variant": "#353535",
+                "background": "#131313",
+                "secondary-fixed": "#e0e0ff",
+                "surface-container-high": "#2a2a2a",
+                "grid-cyan": "rgba(100, 220, 240, 0.7)",
+                "secondary-fixed-dim": "#bfc2ff",
+                "tertiary": "#69d5ee",
+                "primary": "#bec2ff",
+                "surface-bright": "#393939",
+                "inverse-on-surface": "#303030",
+                "surface-container-lowest": "#0e0e0e",
+                "surface-tint": "#bec2ff",
+                "error-container": "#93000a",
+                "selection-green": "rgb(98, 137, 95)",
+                "highlight-blue": "rgba(0, 0, 255, 0.5)",
+                "on-secondary": "#181d8c",
+                "on-tertiary-fixed": "#001f26",
+                "surface-container-low": "#1b1c1c",
+                "outline-variant": "#454558",
+                "secondary": "#bfc2ff",
+                "on-primary-container": "#b3b7ff",
+                "inverse-surface": "#e4e2e1",
+                "on-primary-fixed-variant": "#0000ef",
+                "on-secondary-fixed": "#00006e",
+                "on-secondary-fixed-variant": "#3239a3",
+                "on-tertiary-fixed-variant": "#004e5c",
+                "inverse-primary": "#343dff",
+                "primary-fixed-dim": "#bec2ff",
+                "surface-container": "#1f2020",
+                "on-primary-fixed": "#00006e",
+                "primary-container": "#0000ff",
+                "text-secondary": "rgba(255, 255, 255, 0.7)",
+                "surface-dark": "#333333",
+                "secondary-container": "#3239a3",
+                "on-primary": "#0001ac",
+                "primary-fixed": "#e0e0ff",
+                "on-background": "#e4e2e1",
+                "on-surface-variant": "#c5c4db",
+                "tertiary-fixed": "#aaedff",
+                "on-secondary-container": "#a9afff",
+                "outline": "#8f8fa4"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-md": "16px",
+                "stroke-thin": "1px",
+                "gutter": "24px",
+                "margin-sm": "8px",
+                "grid-base": "60px",
+                "sub-grid": "12px",
+                "stroke-heavy": "2px"
+        },
+        "fontFamily": {
+                "display-lg": [
+                        "Rajdhani"
+                ],
+                "body-md": [
+                        "Montserrat"
+                ],
+                "label-md": [
+                        "Rajdhani"
+                ],
+                "label-sm": [
+                        "Rajdhani"
+                ],
+                "headline-sm": [
+                        "Rajdhani"
+                ],
+                "body-lg": [
+                        "Montserrat"
+                ],
+                "display-md": [
+                        "Rajdhani"
+                ]
+        },
+        "fontSize": {
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "14px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-md": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-sm": [
+                        "10px",
+                        {
+                                "lineHeight": "1.0",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-sm": [
+                        "20px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "500"
+                        }
+                ],
+                "display-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .grid-bg {
+            background-image: 
+                linear-gradient(to right, rgba(143, 143, 164, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(143, 143, 164, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-background grid-bg text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 border-b border-outline-variant bg-surface-bright/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-grid-base h-[60px] max-w-full mx-auto">
+<!-- Brand -->
+<div class="flex items-center h-8 w-auto">{{DATA:DOCUMENT:DOCUMENT_5}}</div>
+<!-- Navigation -->
+<nav class="hidden md:flex gap-8 items-center font-label-md text-label-md uppercase"><a class="text-primary border-b-2 border-primary pb-1 transition-all active:opacity-80 cursor-pointer" href="#">SERVICIOS</a><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 active:opacity-80 cursor-pointer" href="#">NOSOTROS</a><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 active:opacity-80 cursor-pointer" href="#">CONTACTO</a></nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded hover:opacity-90 transition-all duration-200 font-bold uppercase tracking-wider">SOLICITAR COTIZACIÓN</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-6 md:px-margin-md py-12 mt-16">
+<!-- Page Header -->
+<div class="mb-16 border-b border-outline-variant pb-8"><h1 class="font-display-lg text-display-lg text-primary mb-4 uppercase tracking-tight">Engineering Services</h1><p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Comprehensive industrial solutions engineered for precision, reliability, and maximum operational uptime. Select a service below to access detailed technical specifications.</p></div>
+<!-- Services Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Service 1: Electrical Installations (Large) -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded relative group overflow-hidden">
+<!-- Header Strip -->
+<div class="bg-primary-container text-on-primary h-12 flex items-center px-6 border-b border-outline-variant">
+<span class="font-label-sm text-label-sm tracking-widest text-primary-fixed-dim">SYS_REQ // 01</span>
+</div>
+<div class="p-8 flex flex-col md:flex-row gap-8">
+<div class="flex-1">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-[48px] text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h2 class="font-display-md text-display-md text-primary tracking-tight">Electrical Installations</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">High-voltage and low-voltage distribution network design, implementation, and commissioning for industrial facilities. Our precision-engineered systems ensure optimal load balancing and fault tolerance under rigorous operational demands.</p>
+<!-- Technical Specs List -->
+<ul class="space-y-2 mb-8 font-label-sm text-label-sm text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> High-Voltage Switchgear Assembly</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Motor Control Centers (MCC)</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Substation Integration</li>
+</ul>
+<button class="flex items-center gap-2 bg-transparent border border-primary text-primary font-label-md text-label-md px-6 py-2 rounded hover:bg-surface-container transition-colors uppercase">
+<span class="material-symbols-outlined text-[20px]">download</span> Download Datasheet
+                        </button>
+</div>
+<!-- Diagram Placeholder -->
+<div class="w-full md:w-1/3 bg-surface border border-outline-variant rounded flex items-center justify-center min-h-[200px] relative overflow-hidden" data-alt="A highly detailed blueprint-style schematic diagram showing a complex electrical power distribution network. The drawing uses sharp, precise lines on a light grey background with deep navy blue and bright safety yellow accents. The visual style is highly technical, reflecting an industrial engineering context, with crisp technical annotations and a modern light-mode brutalist aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAG_s2SInaC90Coc4qt48qe7MaxF5r2r00w4I2cp79WlMw1g4jcZccVMmY4CkeZ0jey3v1FlVxkFLjiIerc8FH_QlvW1eadz3zAZgGkuZLNF__SriiY6xUXBpeYgavdaAxHgfKCOF6w7I2fUc5SxHjWGXq4qQiZLuhKxUvjiNcBpbrqZ5d_yVq3-htne53jKMBvWJGLRFIYcjpoEeMQr3IUdrcUpYB6hrX52RTe1Bd4Y3pmGhHHV2b5lajA1JjAref6hctu0q8cBsk'); background-size: cover; background-position: center;">
+<!-- Content overlaid on image if needed, or leave empty if image handles it -->
+</div>
+</div>
+</div>
+<!-- Service 2: Industrial Automation (Medium) -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded relative group flex flex-col">
+<div class="bg-primary-container text-on-primary h-12 flex items-center px-6 border-b border-outline-variant">
+<span class="font-label-sm text-label-sm tracking-widest text-primary-fixed-dim">SYS_REQ // 02</span>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-[40px] text-primary" style="font-variation-settings: 'FILL' 1;">memory</span>
+<h2 class="font-headline-sm text-headline-sm text-primary tracking-tight">Industrial Automation</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-4">Deployment of robust PLC and SCADA architectures to stream-line manufacturing processes. We integrate advanced sensory networks for real-time telemetry and automated response protocols.</p>
+<button class="w-full flex items-center justify-center gap-2 bg-transparent border border-primary text-primary font-label-md text-label-md px-6 py-2 rounded hover:bg-surface-container transition-colors uppercase mt-auto">
+<span class="material-symbols-outlined text-[20px]">download</span> PLC Specs
+                    </button>
+</div>
+</div>
+<!-- Service 3: Maintenance Plans (Medium) -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded relative group flex flex-col">
+<div class="bg-primary-container text-on-primary h-12 flex items-center px-6 border-b border-outline-variant">
+<span class="font-label-sm text-label-sm tracking-widest text-primary-fixed-dim">SYS_REQ // 03</span>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-[40px] text-primary" style="font-variation-settings: 'FILL' 1;">build</span>
+<h2 class="font-headline-sm text-headline-sm text-primary tracking-tight">Maintenance Plans</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-4">Predictive and preventative maintenance programs utilizing thermal imaging and vibration analysis. Designed to eliminate unscheduled downtime and extend equipment lifecycle.</p>
+<button class="w-full flex items-center justify-center gap-2 bg-transparent border border-primary text-primary font-label-md text-label-md px-6 py-2 rounded hover:bg-surface-container transition-colors uppercase mt-auto">
+<span class="material-symbols-outlined text-[20px]">download</span> SLA Details
+                    </button>
+</div>
+</div>
+<!-- Service 4: Energy Efficiency (Large) -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded relative group overflow-hidden">
+<div class="bg-primary-container text-on-primary h-12 flex items-center px-6 border-b border-outline-variant">
+<span class="font-label-sm text-label-sm tracking-widest text-primary-fixed-dim">SYS_REQ // 04</span>
+</div>
+<div class="p-8 flex flex-col md:flex-row-reverse gap-8">
+<div class="flex-1">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-[48px] text-primary" style="font-variation-settings: 'FILL' 1;">eco</span>
+<h2 class="font-display-md text-display-md text-primary tracking-tight">Energy Efficiency</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Comprehensive power quality analysis and energy consumption optimization. Implementation of active harmonic filters and power factor correction systems to ensure compliance with utility standards.</p>
+<!-- Technical Specs List -->
+<ul class="space-y-2 mb-8 font-label-sm text-label-sm text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Harmonic Mitigation</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Power Factor Correction</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px] text-primary">check_circle</span> Real-time Consumption Audits</li>
+</ul>
+<button class="flex items-center gap-2 bg-transparent border border-primary text-primary font-label-md text-label-md px-6 py-2 rounded hover:bg-surface-container transition-colors uppercase">
+<span class="material-symbols-outlined text-[20px]">download</span> Audit Report Example
+                        </button>
+</div>
+<!-- Diagram Placeholder -->
+<div class="w-full md:w-1/3 bg-surface border border-outline-variant rounded flex items-center justify-center min-h-[200px] relative overflow-hidden" data-alt="A clean, industrial dashboard interface showing a data chart for energy consumption analysis. The chart lines are precise and sharp, using navy blue and safety yellow on a light grey grid background. The overall aesthetic is highly technical, reflecting corporate professionalism and refined brutalism, with clear structural lines and high contrast." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRChf3AOmTZNx_fLALR6F5MhDsp7Fy-2uB_WkTQeZuGLeyYCbfeLgYeBcb-KYEiJKpEYLw-t5DZLEP4Pend8FMapIyNV2grU6AyXBR51yULHNEQfSOLLMSkrg_R97s2ijpseHotBe_MsJfh2-7PVERsi_ECY4Uwq7mmKl7e0_tTX1Gu1QNlcjxl1k5-_9VN-zptEQIAt-6HOxFZ0whkcYYSH_pTFcq3t-PICTxGyuLiVjSYcpmEj7U0Lkg9HghgYXncR830e9tiGQ'); background-size: cover; background-position: center;">
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full mt-auto border-t border-outline-variant relative bottom-0">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-grid-base py-margin-md max-w-full mx-auto">
+<!-- Brand -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded relative group overflow-hidden">
+<div class="font-display-md text-display-md font-bold text-primary uppercase">
+                    ELECCON
+                </div>
+</div>
+<!-- Links -->
+<div class="col-span-1 md:col-span-4 flex flex-wrap gap-6 font-body-md text-body-md mb-4 border-b border-outline-variant pb-4"><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Certifications</a><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Technical Specs</a><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Site Map</a><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Privacy Policy</a></div>
+<!-- Copyright -->
+<div class="col-span-1 md:col-span-4 text-tertiary font-body-md text-body-md">
+                © 2024 ELECCON Ingeniería. Technical Excellence.
+            </div>
+</div>
+</footer>
+</body></html>
